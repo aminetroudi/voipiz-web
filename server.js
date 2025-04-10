@@ -4,6 +4,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const rateLimit = require("express-rate-limit");
 const helmet = require("helmet");
+const path = require("path");
 require("dotenv").config();
 
 const app = express();
@@ -26,7 +27,7 @@ const limiter = rateLimit({
 });
 
 app.use(cors());
-app.use(express.static("public"));
+app.use(express.static(__dirname + "/public")); // Serve static files from the 'public' folder
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -65,6 +66,11 @@ app.post("/contact", async (req, res) => {
     console.error("Erreur lors de l'envoi de l'email :", error);
     res.status(500).json({ success: false, message: "Une erreur est survenue lors de l'envoi de votre message." });
   }
+});
+
+// Catch-all route to serve index.html for any unmatched routes
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
 app.listen(PORT, '0.0.0.0', () => {
