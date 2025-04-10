@@ -67,7 +67,7 @@ app.post("/contact", async (req, res) => {
   }
 });
 
-app.listen(PORT, () => {
-     console.log(`Serveur started on port ${PORT} in ${NODE_ENV} mode`);
-     console.log(`Visit http://localhost:${PORT} to access the site`);
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Serveur started on port ${PORT} in ${NODE_ENV} mode`);
+  console.log(`Visit http://localhost:${PORT} to access the site locally`);
 });
