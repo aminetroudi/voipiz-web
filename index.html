@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Audinia - Téléphonie d'entreprise Simple, sécurisée, sans frais cachés
+    </title>
+    <meta
+      name="description"
+      content="Solution VoIP professionnelle en France pour les PME. Sécurité, flexibilité, support de qualité."
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script defer src="js/libs/gsap.min.js"></script>
+    <script defer src="js/libs/ScrollTrigger.min.js"></script>
+    <script defer src="js/libs/ScrollToPlugin.min.js"></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Audinia",
+        "image": "https://audinia.com/logo.png",
+        "description": "Solution de téléphonie VoIP professionnelle pour PME en France. Sécurisé, simple, sans frais cachés.",
+        "url": "https://audinia.com",
+        "telephone": "+33 6 22 92 61 36",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Strasbourg",
+          "addressCountry": "FR"
+        },
+        "sameAs": ["https://linkedin.com/company/audinia"]
+      }
+    </script>
+  </head>
+  <body>
+    <header>
+      <nav class="nav">
+        <ul class="nav-links">
+          <li>
+            <a href="#home" class="nav-link" aria-label="Go to home section">Audinia</a>
+          </li>
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#pricing" class="nav-link">Tarifs</a></li>
+          <li><a href="#comparison" class="nav-link">Offres</a></li>
+          <li><a href="#advantages" class="nav-link">Pourquoi nous ?</a></li>
+          <li><a href="#france" class="nav-link">VoIP en France</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section id="home" class="hero section">
+      <h1>AUDINIA</h1>
+      <video id="bg-video" autoplay loop muted playsinline loading="lazy">
+        <source
+          src="background.mp4"
+          type="video/mp4"
+          title="VoIP services Background video"
+        />
+        <img src="fallback.jpg" alt="VoIP services Background image" />
+        Your browser does not support the video tag.
+      </video>
+      <h2>La solution de téléphonie d’entreprise, boostée par l’intelligence artificielle.</h2>
+      <p>Transcriptions automatiques, résumés d’appels, analyses en temps réel : gagnez en efficacité avec une téléphonie nouvelle génération.</p>
+      <a href="#contact" class="cta">Demander une démo</a>
+    </section>
+
+    <section id="services" class="section max-width">
+      <h2>Nos services</h2>
+      <ul>
+        <li>
+          <strong>Attribution de numéros géographiques et nationaux</strong> :
+          obtenez de nouveaux numéros en 01, 02, 03, etc. ou gardez les vôtres
+          grâce à la portabilité.
+        </li>
+        <li>
+          <strong>Interface de gestion intuitive</strong> : configurez vos
+          lignes, horaires, renvois, groupes d’appel et répondeurs en quelques
+          clics, sans technicien.
+        </li>
+        <li>
+          <strong>VPN intégré</strong> : chaque ligne est reliée à notre
+          infrastructure via un tunnel VPN dédié, garantissant une
+          confidentialité totale des communications.
+        </li>
+        <li>
+          <strong>Appels haute qualité HD</strong> : une clarté vocale
+          irréprochable, même en cas de bande passante limitée.
+        </li>
+        <li>
+          <strong>Application audinia</strong> : appelez depuis votre ordinateur,
+          votre mobile ou votre téléphone IP, en France comme à l’étranger.
+        </li>
+        <li>
+          <strong>Support technique prioritaire</strong> : assistance
+          téléphonique et email avec prise en main à distance.
+        </li>
+        <li>
+          <strong>Conformité RGPD</strong> : vos données sont traitées
+          exclusivement en France, hébergées dans des datacenters souverains.
+        </li>
+      </ul>
+    </section>
+
+    <section id="pricing" class="section max-width">
+      <h2>Tarification</h2>
+      <div class="pricing-table">
+    
+        <div class="plan">
+          <h3>Essentiel</h3>
+          <p>19 € / mois / utilisateur</p>
+          <ul>
+            <li>Numéro VoIP inclus</li>
+            <li>Appels illimités vers les fixes en France</li>
+            <li>Messagerie vocale</li>
+            <li>Application web et mobile</li>
+            <li>Enregistrement des appels (30 min/mois)</li>
+            <li>Transcription IA de base</li>
+            <li>Support standard</li>
+          </ul>
+          <div class="cta-wrapper">
+            <a href="#contact" class="cta">Souscrire</a>
+          </div>
+        </div>
+    
+        <div class="plan">
+          <h3>Professionnel</h3>
+          <p>29 € / mois / utilisateur</p>
+          <ul>
+            <li>Toutes les fonctionnalités de l'offre Essentiel</li>
+            <li>Appels illimités vers les mobiles en France</li>
+            <li>Enregistrement étendu (2h/mois)</li>
+            <li>Résumé automatique des appels</li>
+            <li>Intégration CRM (email, calendrier, etc.)</li>
+            <li>Recherche intelligente dans l'historique</li>
+            <li>Support prioritaire</li>
+          </ul>
+          <div class="cta-wrapper">
+            <a href="#contact" class="cta">Souscrire</a>
+          </div>
+        </div>
+    
+        <div class="plan">
+          <h3>Business AI</h3>
+          <p>49 € / mois / utilisateur</p>
+          <ul>
+            <li>Toutes les fonctionnalités de l'offre Professionnel</li>
+            <li>Appels illimités vers Europe & Amérique du Nord</li>
+            <li>Numéro international dans 65 pays</li>
+            <li>Analyse IA avancée : sentiment & mots-clés</li>
+            <li>Export automatique vers outils métiers</li>
+            <li>Tableaux de bord analytiques IA</li>
+            <li>Support VIP 24/7</li>
+          </ul>
+          <div class="cta-wrapper">
+            <a href="#contact" class="cta">Souscrire</a>
+          </div>
+        </div>
+    
+      </div>
+    </section>
+    
+    <section id="comparison" class="section max-width">
+      <h2>Comparaison des Offres</h2>
+      <div class="comparison-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Fonctionnalités</th>
+              <th>Essentiel</th>
+              <th>Professionnel</th>
+              <th>Business AI</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Numéro VoIP inclus</td>
+              <td>✔️</td>
+              <td>✔️</td>
+              <td>✔️</td>
+            </tr>
+            <tr>
+              <td>Appels illimités vers fixes France</td>
+              <td>✔️</td>
+              <td>✔️</td>
+              <td>✔️</td>
+            </tr>
+            <tr>
+              <td>Appels vers mobiles France</td>
+              <td>❌</td>
+              <td>✔️</td>
+              <td>✔️</td>
+            </tr>
+            <tr>
+              <td>Appels vers Europe & Amérique N.</td>
+              <td>❌</td>
+              <td>❌</td>
+              <td>✔️</td>
+            </tr>
+            <tr>
+              <td>Enregistrement des appels</td>
+              <td>30 min/mois</td>
+              <td>2h/mois</td>
+              <td>Illimité</td>
+            </tr>
+            <tr>
+              <td>Transcription IA</td>
+              <td>✔️ (de base)</td>
+              <td>✔️</td>
+              <td>✔️</td>
+            </tr>
+            <tr>
+              <td>Résumé automatique</td>
+              <td>❌</td>
+              <td>✔️</td>
+              <td>✔️</td>
+            </tr>
+            <tr>
+              <td>Analyse de sentiment / mots-clés</td>
+              <td>❌</td>
+              <td>❌</td>
+              <td>✔️</td>
+            </tr>
+            <tr>
+              <td>Intégration CRM</td>
+              <td>❌</td>
+              <td>✔️</td>
+              <td>✔️ + export automatique</td>
+            </tr>
+            <tr>
+              <td>Support</td>
+              <td>Standard</td>
+              <td>Prioritaire</td>
+              <td>VIP 24/7</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    
+    <section id="advantages" class="section max-width">
+      <h2>Pourquoi nous choisir&nbsp;?</h2>
+      <div class="advantage-list">
+        <div class="advantage-item">
+          <h3>Simplicité maximale</h3>
+          <p>
+            Une solution pensée pour les PME&nbsp;: déploiement en 24h, pas de
+            matériel complexe, gestion en ligne.
+          </p>
+        </div>
+
+        <div class="advantage-item">
+          <h3>Sécurité renforcée</h3>
+          <p>
+            VPN intégré, chiffrement SRTP/ZRTP, hébergement en France : votre
+            téléphonie respecte les plus hauts standards de sécurité.
+          </p>
+        </div>
+
+        <div class="advantage-item">
+          <h3>Tarification transparente</h3>
+          <p>
+            Des prix clairs, tout compris, sans coûts masqués. Chaque
+            utilisateur connaît exactement ce qu’il paie.
+          </p>
+        </div>
+
+        <div class="advantage-item">
+          <h3>Support client humain</h3>
+          <p>
+            Pas de tickets automatiques ni de chatbots&nbsp;: un interlocuteur
+            dédié vous accompagne de l'installation à l'usage quotidien.
+          </p>
+        </div>
+
+        <div class="advantage-item">
+          <h3>Adaptabilité sectorielle</h3>
+          <p>
+            Nous comprenons vos besoins : cabinet médical, agence immobilière,
+            service client, cabinet juridique… audinia s’adapte à votre métier.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="france" class="section max-width">
+      <h2>Service VoIP en France</h2>
+      <p>
+        Audinia est une solution 100 % française, conçue pour répondre aux
+        exigences techniques et légales des entreprises de l’Hexagone.
+      </p>
+      <ul>
+        <li>
+          <strong>Hébergement local</strong> : tous nos serveurs sont situés en
+          France, dans des datacenters certifiés ISO 27001, RGPD-compliant.
+        </li>
+        <li>
+          <strong>Conformité ARCEP</strong> : nos services sont opérés en accord
+          avec la réglementation en vigueur pour les communications
+          électroniques.
+        </li>
+        <li>
+          <strong>Numérotation officielle</strong> : attribution et portabilité
+          de numéros en conformité avec les règles françaises (ZNE, 09, etc.).
+        </li>
+        <li>
+          <strong>Support en français</strong> : assistance par une équipe
+          locale, à l’écoute de vos besoins professionnels.
+        </li>
+        <li>
+          <strong>Respect de la souveraineté numérique</strong> : vos données ne
+          quittent jamais le territoire français.
+        </li>
+      </ul>
+    </section>
+
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <form id="contact-form" method="POST" action="/contact">
+        <input type="text" name="name" placeholder="Votre nom" required />
+        <input
+          type="email"
+          name="email"
+          placeholder="Votre email"
+          required
+          pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+        />
+        <textarea name="message" placeholder="Votre message" required></textarea>
+        <button type="submit">Envoyer</button>
+        <div id="loader" style="display: none">⏳ Envoi en cours...</div>
+        <p id="success-message" style="display: none; color: green;"></p>
+        <p id="error-message" style="display: none; color: red;"></p>
+      </form>
+    </section>
+
+    <footer>
+      <p id="footer-text"></p>
+    </footer>
+    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/footer.js"></script>
+
+    <div id="cookie-banner" class="cookie-banner">
+      <p>
+        Ce site utilise des cookies pour améliorer votre expérience.
+        <a
+          class="link"
+          href="./cookie-policy.html"
+          target="_blank"
+          aria-label="Lire la politique de cookies"
+          >En savoir plus</a
+        >
+        <button id="accept-cookies" aria-label="Accepter les cookies">
+          Accepter
+        </button>
+        <button
+          id="reject-cookies"
+          class="button-inverted"
+          aria-label="Refuser les cookies"
+        >
+          Refuser
+        </button>
+      </p>
+    </div>
+  </body>
+</html>
