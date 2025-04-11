@@ -54,13 +54,15 @@
     </header>
     <section id="home" class="hero section">
       <h1>AUDINIA</h1>
-      <video id="bg-video" autoplay loop muted playsinline loading="lazy">
+      <div id="fallback-container">
+        <img id="fallback-image" src="fallback.jpg" alt="VoIP services Background image" />
+      </div>
+      <video id="bg-video" autoplay loop muted playsinline loading="lazy" style="display: none;">
         <source
           src="background.mp4"
           type="video/mp4"
           title="VoIP services Background video"
         />
-        <img src="fallback.jpg" alt="VoIP services Background image" />
         Your browser does not support the video tag.
       </video>
       <h2>La solution de téléphonie d’entreprise, boostée par l’intelligence artificielle.</h2>
