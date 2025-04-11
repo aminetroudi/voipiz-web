@@ -1,0 +1,473 @@
+:root {
+  --primary: #004f9e;
+  --secondary: #6c757d;
+  --text: #333;
+  --light: #fff;
+  --accent-color: #98b8f3;
+  --background-color: #f8f9fa;
+  --text-color: #333;
+
+  --bs-primary: #004f9e;
+  --bs-primary-rgb: 0, 79, 158;
+  --bs-link-color: #004f9e;
+  --bs-link-hover-color: #98b8f3;
+}
+
+html {
+  font-size: clamp(14px, 1.5vw, 18px); /* Taille de base responsive */
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  padding-top: 60px; /* Compensate for fixed navbar */
+  margin: 0;
+}
+
+/* Base styles (default for larger screens) */
+h1 {
+  font-size: var(--font-size-h1);
+  margin: 1rem 0;
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+  margin: 1rem 0;
+}
+
+h1, h2 {
+  margin-top: 2rem; /* Add top margin to titles */
+}
+
+h3 {
+  font-weight: 700;
+}
+
+p, li {
+  font-size: var(--font-size-p);
+}
+
+header {
+  background: var(--primary);
+  color: var(--light);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+.link {
+  color: var(--light);
+  text-decoration: underline;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover effect */
+}
+
+/* Add these new styles */
+.navbar {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.nav-link {
+  font-weight: 500;
+  text-transform: uppercase;
+  padding: 0.5rem 1rem !important;
+  transition: color 0.3s ease;
+}
+
+.nav-link.active {
+  background-color: var(--light);
+  color: var(--primary) !important;
+  border-radius: 4px;
+}
+
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    padding: 1rem 0;
+  }
+
+  .nav-link {
+    padding: 0.75rem 1rem !important;
+  }
+
+  .nav-link.active {
+    background-color: transparent;
+    color: var(--light) !important;
+    font-weight: 700;
+  }
+}
+
+.hero {
+  position: relative;
+  text-align: center;
+  color: var(--light);
+  padding: 4rem 1rem;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8));
+  z-index: -1;
+}
+
+.hero h1 {
+  font-size: clamp(5rem, 10vw, 15rem);
+}
+
+.hero p {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  margin-bottom: 1rem;
+}
+
+#bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  transition: opacity 0.5s ease; /* Smooth transition */
+}
+
+#fallback-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: #000; /* Optional: Background color for better contrast */
+}
+
+#fallback-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cta-wrapper {
+  margin-top: 1rem;
+}
+
+.cta {
+  background-color: var(--primary);
+  color: var(--light);
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.cta:hover {
+  background-color: var(--accent-color);
+  color: var(--primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.section {
+  min-height: calc(100vh - 80px); /* Full viewport height */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  scroll-snap-align: start; /* Optional: For smooth snapping */
+}
+
+/* Special handling for the hero section */
+.hero.section {
+  min-height: 100vh; /* Full viewport height */
+  position: relative;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ensure content is centered within sections */
+.section .container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.max-width {
+  max-width: 1000px;
+}
+
+.pricing-table {
+  display: flex;
+  justify-content: space-around;
+  gap: 1rem;
+  flex-wrap: wrap; /* Ensure cards wrap on smaller screens */
+}
+
+#loader {
+  text-align: center;
+  font-size: 1rem;
+  color: var(--secondary);
+  margin-top: 1rem;
+}
+
+#success-message,
+#error-message {
+  text-align: center;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+#success-message {
+  color: green; /* Success message color */
+}
+
+#error-message {
+  color: red; /* Error message color */
+}
+
+input, textarea, button {
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+button {
+  background: var(--primary);
+  color: var(--light);
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+}
+
+button:hover {
+  background-color: var(--accent-color);
+}
+
+footer {
+  background-color: var(--primary);
+  color: var(--light);
+  text-align: center;
+  padding: 0.5rem 1rem;
+  font-size: clamp(0.8rem, 1vw, 1rem);
+  width: 100%; /* Ensure the footer takes full width */
+  margin: 0; /* Remove any default margin */
+}
+
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  min-width: 100%;
+  background: var(--primary);
+  color: var(--light);
+  padding: 1rem;
+  text-align: center;
+  z-index: 9999;
+}
+
+.cookie-banner button {
+  background: var(--light);
+  color: var(--primary);
+  border: none;
+  padding: 0.5rem 1rem;
+  margin-left: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent-color);
+}
+
+/* Override Bootstrap classes */
+.text-primary {
+  color: var(--primary) !important;
+}
+
+.bg-primary {
+  background-color: var(--primary) !important;
+}
+
+.btn-primary {
+  background-color: var(--primary) !important;
+  border-color: var(--primary) !important;
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-color) !important;
+  border-color: var(--accent-color) !important;
+  color: var(--primary) !important;
+}
+
+.border-primary {
+  border-color: var(--primary) !important;
+}
+
+.table-primary {
+  --bs-table-bg: rgba(var(--bs-primary-rgb), 0.1);
+  --bs-table-striped-bg: rgba(var(--bs-primary-rgb), 0.15);
+  --bs-table-active-bg: rgba(var(--bs-primary-rgb), 0.2);
+  --bs-table-hover-bg: rgba(var(--bs-primary-rgb), 0.15);
+  color: var(--primary);
+}
+
+/* Ensure navbar colors are consistent */
+.navbar-dark.bg-primary {
+  background-color: var(--primary) !important;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: var(--light);
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: var(--accent-color);
+}
+
+.navbar-dark .navbar-nav .nav-link.active {
+  color: var(--primary) !important;
+  background-color: var(--light);
+}
+
+/* Form focus states */
+.form-control:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.25);
+}
+
+/* For screens smaller than 1536px */
+@media screen and (max-width: 1536px) {
+  .hero h1 {
+    font-size: clamp(3rem, 6vw, 5rem); /* Adjusted for better scaling */
+  }
+}
+
+/* For screens smaller than 1024px */
+@media screen and (max-width: 1024px) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  p, li {
+    font-size: 1rem;
+  }
+
+  .hero h1 {
+    font-size: 5rem;
+  }
+}
+
+/* For screens smaller than 768px */
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  p, li {
+    font-size: 0.9rem;
+  }
+
+  h1, h2 {
+    margin-top: 3rem; /* Increase margin for smaller screens */
+  }
+
+  .section {
+    padding: 60px 1rem; /* Smaller padding on mobile */
+    min-height: 100vh; /* Maintain full height on mobile */
+  }
+
+  .section {
+    padding: 1rem; /* Reduce padding for smaller screens */
+  }
+
+  nav ul {
+    flex-direction: column;
+    padding-left: 0;
+  }
+
+  .hero {
+    padding: 2rem 1rem;
+  }
+
+  .plan {
+    max-width: 100%; /* Ensure pricing cards take full width */
+    padding: 1rem;
+  }
+
+  footer {
+    padding: 1rem; /* Adjust footer padding for smaller screens */
+  }
+
+  form {
+    padding: 0.8rem;
+  }
+
+  input, textarea {
+    font-size: 1rem;
+  }
+
+  .fullscreen {
+    min-height: auto;
+    padding: 2rem 1rem;
+  }
+
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .nav-link {
+    width: 100%; /* Make links full-width for better usability */
+    text-align: left;
+  }
+
+}
+

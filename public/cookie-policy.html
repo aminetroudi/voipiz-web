@@ -8,70 +8,57 @@
       name="description"
       content="Découvrez notre politique de cookies et comment nous utilisons les cookies pour améliorer votre expérience sur notre site."
     />
-    <link rel="stylesheet" href="style.css" />
-    <style>
-      /* Ensure the footer is sticky */
-      body {
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-        margin: 0;
-      }
-      main {
-        flex: 1;
-      }
-      footer {
-        text-align: center;
-        padding: 1rem;
-      }
-      .section {
-  min-height: calc(100vh - 60px); /* Adjust for fixed header height */
-  padding: 2rem 1rem;
-  margin: auto;
-  opacity: 1; /* Ensure sections are visible by default */
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  justify-content: start;
-  scroll-snap-align: start; /* Optional: For smooth snapping */
-  background: var(--background-color);
-}
-    </style>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <script defer src="js/libs/bootstrap.bundle.min.js"></script>
+    <script 
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"></script>
   </head>
   <body>
     <header>
-      <nav class="nav">
-        <ul class="nav-links">
-          <li>
-            <a
-              href="index.html"
-              class="nav-link"
-              aria-label="Retour à l'accueil"
-              >Accueil</a
-            >
-          </li>
-          <li>
-            <a
-              href="index.html#services"
-              class="nav-link"
-              aria-label="Voir les services"
-              >Services</a
-            >
-          </li>
-          <li>
-            <a
-              href="index.html#contact"
-              class="nav-link"
-              aria-label="Aller à la section contact"
-              >Contact</a
-            >
-          </li>
-        </ul>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="#home">AUDINIA</a>
+          <button 
+            class="navbar-toggler" 
+            type="button" 
+            data-bs-toggle="collapse" 
+            data-bs-target="#navbarNav" 
+            aria-controls="navbarNav" 
+            aria-expanded="false" 
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#services">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#pricing">Tarifs</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#comparison">Offres</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#advantages">Pourquoi nous ?</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#france">VoIP en France</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contact">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </nav>
     </header>
 
-    <section class="section">
-      <h1>Politique de Cookies</h1>
+    <section class="section container">
+      <h1 class="text-center mb-4">Politique de Cookies</h1>
       <p>
         Cette politique de cookies explique ce que sont les cookies, comment
         nous les utilisons, et vos choix concernant leur utilisation.
@@ -132,13 +119,7 @@
     </section>
 
     <footer>
-      <p>
-        &copy;
-        <script>
-          document.write(new Date().getFullYear());
-        </script>
-        AUDINIA. Tous droits réservés.
-      </p>
+      <div class="text-center">2025 AUDINIA. Tous droits réservés.</div>
     </footer>
   </body>
 </html>

@@ -1,52 +1,54 @@
 export function initFormHandler() {
   const form = document.getElementById("contact-form");
+  const loader = document.getElementById("loader");
+  const successMessage = document.getElementById("success-message");
+  const errorMessage = document.getElementById("error-message");
 
-  if (form) {
+  if (form && loader && successMessage && errorMessage) {
     form.addEventListener("submit", async (e) => {
-      e.preventDefault(); // Prevent the default form submission behavior
+      e.preventDefault();
 
-      const loader = document.getElementById("loader");
-      const successMessage = document.getElementById("success-message");
-      const errorMessage = document.getElementById("error-message");
+      // Show loader, hide messages
+      loader.classList.remove("d-none");
+      successMessage.classList.add("d-none");
+      errorMessage.classList.add("d-none");
 
-      loader.style.display = "block";
-      successMessage.style.display = "none";
-      errorMessage.style.display = "none";
+      const formData = new FormData(form);
 
       try {
-        const response = await fetch(form.action, {
-          method: form.method,
+        const response = await fetch("/contact", {
+          method: "POST",
           headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
+            "Content-Type": "application/json",
           },
-          body: new URLSearchParams(new FormData(form)),
+          body: JSON.stringify({
+            name: formData.get("name"),
+            email: formData.get("email"),
+            message: formData.get("message"),
+          }),
         });
 
         const result = await response.json();
-        loader.style.display = "none";
+        loader.classList.add("d-none");
 
         if (response.ok && result.success) {
           successMessage.textContent = result.message;
-          successMessage.style.display = "block";
-
-          // Reset the form
+          successMessage.classList.remove("d-none");
           form.reset();
 
-          // Hide the success message after 5 seconds
           setTimeout(() => {
-            successMessage.style.display = "none";
+            successMessage.classList.add("d-none");
           }, 5000);
         } else {
           throw new Error(result.message || "Une erreur est survenue.");
         }
       } catch (error) {
-        loader.style.display = "none";
+        loader.classList.add("d-none");
         errorMessage.textContent = error.message;
-        errorMessage.style.display = "block";
+        errorMessage.classList.remove("d-none");
 
-        // Hide the error message after 5 seconds
         setTimeout(() => {
-          errorMessage.style.display = "none";
+          errorMessage.classList.add("d-none");
         }, 5000);
       }
     });

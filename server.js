@@ -39,7 +39,9 @@ app.post("/contact", async (req, res) => {
   const { name, email, message } = req.body;
 
   if (!name || !email || !message) {
-    return res.status(400).json({ success: false, message: "Tous les champs sont requis." });
+    return res
+      .status(400)
+      .json({ success: false, message: "Tous les champs sont requis." });
   }
 
   try {
@@ -60,11 +62,17 @@ app.post("/contact", async (req, res) => {
 
     await transporter.sendMail(mailOptions);
 
-    // Réponse JSON pour indiquer le succès
-    res.status(200).json({ success: true, message: "Message envoyé avec succès !" });
+    res
+      .status(200)
+      .json({ success: true, message: "Message envoyé avec succès !" });
   } catch (error) {
     console.error("Erreur lors de l'envoi de l'email :", error);
-    res.status(500).json({ success: false, message: "Une erreur est survenue lors de l'envoi de votre message." });
+    res
+      .status(500)
+      .json({
+        success: false,
+        message: "Une erreur est survenue lors de l'envoi de votre message.",
+      });
   }
 });
 
