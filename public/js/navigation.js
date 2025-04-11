@@ -1,6 +1,7 @@
 export function initNavigation() {
   const navLinks = document.querySelectorAll('.nav-link');
   const header = document.querySelector('header');
+  const navbarCollapse = document.querySelector('.navbar-collapse');
 
   navLinks.forEach((link) => {
     link.addEventListener("click", (e) => {
@@ -19,7 +20,6 @@ export function initNavigation() {
       }
 
       // Close mobile menu if open
-      const navbarCollapse = document.querySelector('.navbar-collapse');
       if (navbarCollapse && navbarCollapse.classList.contains('show')) {
         bootstrap.Collapse.getInstance(navbarCollapse).hide();
       }
