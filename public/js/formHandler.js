@@ -3,7 +3,7 @@ export function initFormHandler() {
 
   if (form) {
     form.addEventListener("submit", async (e) => {
-      e.preventDefault();
+      e.preventDefault(); // Prevent the default form submission behavior
 
       const loader = document.getElementById("loader");
       const successMessage = document.getElementById("success-message");
