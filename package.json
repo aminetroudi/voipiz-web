@@ -1,7 +1,7 @@
 {
-  "name": "audinia",
+  "name": "voipiz",
   "version": "1.0.0",
-  "description": "Audinia VoIP pour PME",
+  "description": "Voipiz pour PME",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",

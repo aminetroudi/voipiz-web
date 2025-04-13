@@ -54,7 +54,7 @@ app.post("/contact", async (req, res) => {
     });
 
     const mailOptions = {
-      from: `"Audinia Contact" <${process.env.MAIL_USER}>`,
+      from: `"Voipiz Contact" <${process.env.MAIL_USER}>`,
       to: process.env.MAIL_USER,
       subject: `Nouveau message de ${name}`,
       text: `Nom: ${name}\nEmail: ${email}\nMessage:\n${message}`,
