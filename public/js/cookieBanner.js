@@ -30,9 +30,13 @@ export function initCookieBanner() {
   const cookiesAccepted = localStorage.getItem("cookiesAccepted");
   if (cookiesAccepted === "true") {
     console.log("Cookies are enabled.");
+    cookieBanner.style.display = "none";
     // Initialize analytics or other cookie-dependent features here
+
   } else if (cookiesAccepted === "false") {
     console.log("Cookies are disabled.");
+    cookieBanner.style.display = "none";
     // Disable analytics or other cookie-dependent features here
+
   }
 }

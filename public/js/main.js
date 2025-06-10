@@ -1,14 +1,16 @@
-import { initCookieBanner } from "./cookieBanner.js";
 import { initNavigation } from "./navigation.js";
 import { initFormHandler } from "./formHandler.js";
+import { initCookieBanner } from "./cookieBanner.js";
+import { initLanguageManager } from "./languageManager.js";
 
-window.addEventListener("load", () => {
-  initCookieBanner();
+document.addEventListener("DOMContentLoaded", function() {
   initNavigation();
   initFormHandler();
+  initCookieBanner();
+  initLanguageManager();
 });
 
-document.addEventListener("DOMContentLoaded", () => {
+window.addEventListener("load", () => {
   const video = document.getElementById("bg-video");
   const fallbackImage = document.getElementById("fallback-image");
   const fallbackContainer = document.getElementById("fallback-container");

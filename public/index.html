@@ -8,15 +8,15 @@
     </title>
     <meta
       name="description"
-      content="Solution VoIP professionnelle en France pour les PME. Sécurité, flexibilité, support de qualité."
+      content="Solution VoIP professionnelle pour les PME. Sécurité, flexibilité, support de qualité."
     />
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
- 
+
     <script defer src="js/libs/gsap.min.js"></script>
     <script defer src="js/libs/ScrollTrigger.min.js"></script>
     <script defer src="js/libs/ScrollToPlugin.min.js"></script>
@@ -27,7 +27,7 @@
         "@type": "LocalBusiness",
         "name": "Voipiz",
         "image": "https://voipiz.com/logo.png",
-        "description": "Solution de téléphonie VoIP professionnelle pour PME en France. Sécurisé, simple, sans frais cachés.",
+        "description": "Solution de téléphonie VoIP professionnelle pour PME. Sécurisé, simple, sans frais cachés.",
         "url": "https://voipiz.com",
         "telephone": "+33 6 22 92 61 36",
         "address": {
@@ -39,18 +39,20 @@
       }
     </script>
   </head>
+
   <body>
     <header>
+      <!-- Navigation -->
       <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
         <div class="container">
           <a class="navbar-brand" href="#home">VOIPIZ</a>
-          <button 
-            class="navbar-toggler" 
-            type="button" 
-            data-bs-toggle="collapse" 
-            data-bs-target="#navbarNav" 
-            aria-controls="navbarNav" 
-            aria-expanded="false" 
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
             aria-label="Toggle navigation"
           >
             <span class="navbar-toggler-icon"></span>
@@ -58,35 +60,64 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
               <li class="nav-item">
-                <a class="nav-link" href="#services">Services</a>
+                <a class="nav-link" href="#services">
+                  <span class="lang-fr">Services</span>
+                  <span class="lang-en d-none">Services</span>
+                </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#pricing">Tarifs</a>
+                <a class="nav-link" href="#pricing">
+                  <span class="lang-fr">Tarifs</span>
+                  <span class="lang-en d-none">Pricing</span>
+                </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#comparison">Offres</a>
+                <a class="nav-link" href="#comparison">
+                  <span class="lang-fr">Offres</span>
+                  <span class="lang-en d-none">Plans</span>
+                </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#advantages">Pourquoi nous ?</a>
+                <a class="nav-link" href="#advantages">
+                  <span class="lang-fr">Pourquoi nous ?</span>
+                  <span class="lang-en d-none">Why us?</span>
+                </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#contact">Contact</a>
+                <a class="nav-link" href="#contact">
+                  <span class="lang-fr">Contact</span>
+                  <span class="lang-en d-none">Contact</span>
+                </a>
               </li>
             </ul>
           </div>
         </div>
       </nav>
     </header>
+
+    <!-- Hero section -->
     <section id="home" class="hero section">
       <div class="container">
         <div class="row">
-            <h1>VOIPIZ</h1>
+          <h1>VOIPIZ</h1>
         </div>
       </div>
       <div id="fallback-container">
-        <img id="fallback-image" src="assets/fallback.jpg" alt="VoIP services Background image" />
+        <img
+          id="fallback-image"
+          src="assets/fallback.jpg"
+          alt="VoIP services Background image"
+        />
       </div>
-      <video id="bg-video" autoplay loop muted playsinline loading="lazy" style="display: none;">
+      <video
+        id="bg-video"
+        autoplay
+        loop
+        muted
+        playsinline
+        loading="lazy"
+        style="display: none"
+      >
         <source
           src="assets/background.mp4"
           type="video/mp4"
@@ -94,55 +125,117 @@
         />
         Your browser does not support the video tag.
       </video>
-      <h2>La solution de téléphonie d’entreprise, boostée par intelligence artificielle</h2>
-      <p>Transcriptions automatiques, résumés d’appels, analyses en temps réel : gagnez en efficacité avec une téléphonie nouvelle génération.</p>
-      <a href="#contact" class="cta">Demander une démo</a>
+      <h2>
+        <span class="lang-fr"
+          >La solution de téléphonie d'entreprise, boostée par intelligence
+          artificielle</span
+        >
+        <span class="lang-en d-none"
+          >The business telephony solution, powered by artificial
+          intelligence</span
+        >
+      </h2>
+      <p>
+        <span class="lang-fr"
+          >Transcriptions automatiques, résumés d'appels, analyses en temps réel
+          : gagnez en efficacité avec une téléphonie nouvelle génération.</span
+        >
+        <span class="lang-en d-none"
+          >Automatic transcriptions, call summaries, real-time analytics: boost
+          your efficiency with next-generation telephony.</span
+        >
+      </p>
+      <a href="#contact" class="cta">
+        <span class="lang-fr">Demander une démo</span>
+        <span class="lang-en d-none">Request a demo</span>
+      </a>
     </section>
 
     <section id="services" class="section container">
-      <h2 class="text-center mb-4">Nos services</h2>
+      <h2 class="text-center mb-4">
+        <span class="lang-fr">Nos services</span>
+        <span class="lang-en d-none">Our services</span>
+      </h2>
+
       <div class="row g-4">
         <div class="col-md-6">
           <div class="card h-100">
             <div class="card-body">
-              <h3 class="card-title text-primary">Téléphonie VoIP</h3>
+              <h3 class="card-title text-primary">
+                <span class="lang-fr">Téléphonie VoIP</span>
+                <span class="lang-en d-none">VoIP Telephony</span>
+              </h3>
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">
-                  <strong>Attribution de numéros géographiques et nationaux</strong> :
-                  obtenez de nouveaux numéros en 01, 02, 03, etc. ou gardez les vôtres
-                  grâce à la portabilité.
+                  <strong>
+                    <span class="lang-fr"
+                      >Attribution de numéros géographiques et nationaux</span
+                    >
+                    <span class="lang-en d-none"
+                      >Geographic and national numbers</span
+                    > </strong
+                  >:
+                  <span class="lang-fr"
+                    >obtenez de nouveaux numéros en 01, 02, 03, etc. ou gardez
+                    les vôtres grâce à la portabilité.</span
+                  >
+                  <span class="lang-en d-none"
+                    >get new numbers or keep your existing ones with our number
+                    portability service.</span
+                  >
                 </li>
                 <li class="list-group-item">
-                  <strong>Application web et mobile</strong> : 
-                  gérez vos appels depuis n'importe quel appareil, avec une interface intuitive
-                  et moderne.
+                  <strong>
+                    <span class="lang-fr">Application web et mobile</span>
+                    <span class="lang-en d-none">Web and mobile app</span>
+                  </strong>
+                  :
+                  <span class="lang-fr"
+                    >gérez vos appels depuis n'importe quel appareil, avec une
+                    interface intuitive et moderne.</span
+                  >
+                  <span class="lang-en d-none"
+                    >manage your calls from any device, with an intuitive and
+                    modern interface.</span
+                  >
                 </li>
                 <li class="list-group-item">
-                  <strong>Messagerie vocale avancée</strong> : 
-                  recevez vos messages vocaux par email avec transcription automatique.
+                  <strong>
+                    <span class="lang-fr">Messagerie vocale avancée</span>
+                    <span class="lang-en d-none">Advanced voicemail</span>
+                  </strong>
+                  :
+                  <span class="lang-fr"
+                    >recevez vos messages vocaux par email avec transcription
+                    automatique.</span
+                  >
+                  <span class="lang-en d-none"
+                    >receive your voicemails by email with automatic
+                    transcription.</span
+                  >
                 </li>
               </ul>
             </div>
           </div>
         </div>
-        
+
         <div class="col-md-6">
           <div class="card h-100">
             <div class="card-body">
               <h3 class="card-title text-primary">Solutions IA</h3>
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">
-                  <strong>Transcription automatique</strong> : 
-                  conversion instantanée de vos appels en texte pour un suivi facilité.
+                  <strong>Transcription automatique</strong> : conversion
+                  instantanée de vos appels en texte pour un suivi facilité.
                 </li>
                 <li class="list-group-item">
-                  <strong>Analyse des conversations</strong> : 
-                  détection automatique des mots-clés et des sentiments pour améliorer
+                  <strong>Analyse des conversations</strong> : détection
+                  automatique des mots-clés et des sentiments pour améliorer
                   votre service client.
                 </li>
                 <li class="list-group-item">
-                  <strong>Résumés intelligents</strong> : 
-                  générez automatiquement des comptes-rendus de vos appels importants.
+                  <strong>Résumés intelligents</strong> : générez
+                  automatiquement des comptes-rendus de vos appels importants.
                 </li>
               </ul>
             </div>
@@ -152,20 +245,53 @@
         <div class="col-md-6">
           <div class="card h-100">
             <div class="card-body">
-              <h3 class="card-title text-primary">Sécurité & Conformité</h3>
+              <h3 class="card-title text-primary">
+                <span class="lang-fr">Sécurité & Conformité</span>
+                <span class="lang-en d-none">Security & Compliance</span>
+              </h3>
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">
-                  <strong>VPN intégré</strong> : 
-                  chaque ligne est reliée à notre infrastructure via un tunnel VPN dédié,
-                  garantissant une confidentialité totale.
+                  <strong>
+                    <span class="lang-fr">VPN intégré</span>
+                    <span class="lang-en d-none">Built-in VPN</span>
+                  </strong>
+                  :
+                  <span class="lang-fr"
+                    >chaque ligne est reliée à notre infrastructure via un
+                    tunnel VPN dédié, garantissant une confidentialité
+                    totale.</span
+                  >
+                  <span class="lang-en d-none"
+                    >each line is connected to our infrastructure via a
+                    dedicated VPN tunnel, ensuring total confidentiality.</span
+                  >
                 </li>
                 <li class="list-group-item">
-                  <strong>Chiffrement de bout en bout</strong> : 
-                  protection SRTP/ZRTP pour tous vos appels.
+                  <strong>
+                    <span class="lang-fr">Chiffrement de bout en bout</span>
+                    <span class="lang-en d-none">End-to-end encryption</span>
+                  </strong>
+                  :
+                  <span class="lang-fr"
+                    >protection SRTP/ZRTP pour tous vos appels.</span
+                  >
+                  <span class="lang-en d-none"
+                    >SRTP/ZRTP protection for all your calls.</span
+                  >
                 </li>
                 <li class="list-group-item">
-                  <strong>Conformité RGPD</strong> : 
-                  hébergement en France et gestion des données conforme aux normes européennes.
+                  <strong>
+                    <span class="lang-fr">Conformité RGPD</span>
+                    <span class="lang-en d-none">GDPR compliance</span>
+                  </strong>
+                  :
+                  <span class="lang-fr"
+                    >hébergement en Europe et gestion des données conforme aux
+                    RGPD.</span
+                  >
+                  <span class="lang-en d-none"
+                    >hosting in Europe and GDPR-compliant data management.</span
+                  >
                 </li>
               </ul>
             </div>
@@ -175,19 +301,51 @@
         <div class="col-md-6">
           <div class="card h-100">
             <div class="card-body">
-              <h3 class="card-title text-primary">Support & Intégration</h3>
+              <h3 class="card-title text-primary">
+                <span class="lang-fr">Support & Intégration</span>
+                <span class="lang-en d-none">Support & Integration</span>
+              </h3>
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">
-                  <strong>Support personnalisé</strong> : 
-                  accompagnement dédié de l'installation à l'utilisation quotidienne.
+                  <strong>
+                    <span class="lang-fr">Support personnalisé</span>
+                    <span class="lang-en d-none">Personalized support</span>
+                  </strong>
+                  :
+                  <span class="lang-fr"
+                    >accompagnement dédié de l'installation à l'utilisation
+                    quotidienne.</span
+                  >
+                  <span class="lang-en d-none"
+                    >dedicated guidance from installation to daily use.</span
+                  >
                 </li>
                 <li class="list-group-item">
-                  <strong>Intégration CRM</strong> : 
-                  connectez votre téléphonie à vos outils existants.
+                  <strong>
+                    <span class="lang-fr">Intégration CRM</span>
+                    <span class="lang-en d-none">CRM Integration</span>
+                  </strong>
+                  :
+                  <span class="lang-fr"
+                    >connectez votre téléphonie à vos outils existants.</span
+                  >
+                  <span class="lang-en d-none"
+                    >connect your telephony to your existing tools.</span
+                  >
                 </li>
                 <li class="list-group-item">
-                  <strong>Formation sur mesure</strong> : 
-                  programmes de formation adaptés à vos besoins spécifiques.
+                  <strong>
+                    <span class="lang-fr">Formation sur mesure</span>
+                    <span class="lang-en d-none">Custom training</span>
+                  </strong>
+                  :
+                  <span class="lang-fr"
+                    >programmes de formation adaptés à vos besoins
+                    spécifiques.</span
+                  >
+                  <span class="lang-en d-none"
+                    >training programs adapted to your specific needs.</span
+                  >
                 </li>
               </ul>
             </div>
@@ -197,24 +355,58 @@
     </section>
 
     <section id="pricing" class="section container">
-      <h2 class="text-center mb-4">Tarification</h2>
+      <h2 class="text-center mb-4">
+        <span class="lang-fr">Tarification</span>
+        <span class="lang-en d-none">Pricing</span>
+      </h2>
+
       <div class="row">
         <!-- Offre Essentiel -->
         <div class="col-md-4 mb-4">
           <div class="card h-100 shadow-sm d-flex flex-column">
             <div class="card-body d-flex flex-column">
-              <h3 class="card-title text-primary">Essentiel</h3>
-              <p class="card-text fs-5">19 € / mois / utilisateur</p>
+              <!-- Essential plan -->
+              <h3 class="card-title text-primary">
+                <span class="lang-fr">Essentiel</span>
+                <span class="lang-en d-none">Essential</span>
+              </h3>
+              <p class="card-text fs-5">
+                <span class="lang-fr">19 € / mois / utilisateur</span>
+                <span class="lang-en d-none">€19 / month / user</span>
+              </p>
               <ul class="list-group list-group-flush flex-grow-1">
-                <li class="list-group-item">Numéro VoIP inclus</li>
-                <li class="list-group-item">Appels illimités vers les fixes en France</li>
-                <li class="list-group-item">Messagerie vocale</li>
-                <li class="list-group-item">Application web et mobile</li>
-                <li class="list-group-item">Support standard</li>
-                <li class="list-group-item">Installation assistée</li>
+                <li class="list-group-item">
+                  <span class="lang-fr">Numéro VoIP inclus</span>
+                  <span class="lang-en d-none">VoIP number included</span>
+                </li>
+                <li class="list-group-item">
+                  <span class="lang-fr">Appels illimités vers les fixes</span>
+                  <span class="lang-en d-none"
+                    >Unlimited calls to landlines</span
+                  >
+                </li>
+                <li class="list-group-item">
+                  <span class="lang-fr">Messagerie vocale</span>
+                  <span class="lang-en d-none">Voicemail</span>
+                </li>
+                <li class="list-group-item">
+                  <span class="lang-fr">Application web et mobile</span>
+                  <span class="lang-en d-none">Web and mobile app</span>
+                </li>
+                <li class="list-group-item">
+                  <span class="lang-fr">Support standard</span>
+                  <span class="lang-en d-none">Standard support</span>
+                </li>
+                <li class="list-group-item">
+                  <span class="lang-fr">Installation assistée</span>
+                  <span class="lang-en d-none">Assisted installation</span>
+                </li>
               </ul>
               <div class="mt-auto pt-3">
-                <a href="#contact" class="btn btn-primary w-100">Souscrire</a>
+                <a href="#contact" class="btn btn-primary w-100">
+                  <span class="lang-fr">Souscrire</span>
+                  <span class="lang-en d-none">Subscribe</span>
+                </a>
               </div>
             </div>
           </div>
@@ -224,17 +416,52 @@
         <div class="col-md-4 mb-4">
           <div class="card h-100 shadow-sm border-primary d-flex flex-column">
             <div class="card-body d-flex flex-column">
-              <h3 class="card-title text-primary">Professionnel</h3>
-              <p class="card-text fs-5">29 € / mois / utilisateur</p>
+              <!-- Professional plan -->
+              <h3 class="card-title text-primary">
+                <span class="lang-fr">Professionnel</span>
+                <span class="lang-en d-none">Professional</span>
+              </h3>
+              <p class="card-text fs-5">
+                <span class="lang-fr">29 € / mois / utilisateur</span>
+                <span class="lang-en d-none">€29 / month / user</span>
+              </p>
               <ul class="list-group list-group-flush flex-grow-1">
-                <li class="list-group-item">Toutes les fonctionnalités de l'offre Essentiel</li>
-                <li class="list-group-item">Appels illimités vers les mobiles en France</li>
-                <li class="list-group-item">Résumé automatique des appels (IA)</li>
-                <li class="list-group-item">Intégration CRM (niveau 1)</li>
-                <li class="list-group-item">Support avancé</li>
+                <li class="list-group-item">
+                  <span class="lang-fr"
+                    >Toutes les fonctionnalités de l'offre Essentiel</span
+                  >
+                  <span class="lang-en d-none"
+                    >All features of the Essential plan</span
+                  >
+                </li>
+                <li class="list-group-item">
+                  <span class="lang-fr">Appels illimités vers les mobiles</span>
+                  <span class="lang-en d-none"
+                    >Unlimited calls to mobile phones</span
+                  >
+                </li>
+                <li class="list-group-item">
+                  <span class="lang-fr"
+                    >Résumé automatique des appels (IA)</span
+                  >
+                  <span class="lang-en d-none"
+                    >Automatic call summary (AI)</span
+                  >
+                </li>
+                <li class="list-group-item">
+                  <span class="lang-fr">Intégration CRM (niveau 1)</span>
+                  <span class="lang-en d-none">CRM integration (level 1)</span>
+                </li>
+                <li class="list-group-item">
+                  <span class="lang-fr">Support avancé</span>
+                  <span class="lang-en d-none">Advanced support</span>
+                </li>
               </ul>
               <div class="mt-auto pt-3">
-                <a href="#contact" class="btn btn-primary w-100">Souscrire</a>
+                <a href="#contact" class="btn btn-primary w-100">
+                  <span class="lang-fr">Souscrire</span>
+                  <span class="lang-en d-none">Subscribe</span>
+                </a>
               </div>
             </div>
           </div>
@@ -244,57 +471,134 @@
         <div class="col-md-4 mb-4">
           <div class="card h-100 shadow-sm d-flex flex-column">
             <div class="card-body d-flex flex-column">
-              <h3 class="card-title text-primary">Business IA</h3>
-              <p class="card-text fs-5">49 € / mois / utilisateur</p>
+              <!-- Business AI plan -->
+              <h3 class="card-title text-primary">
+                <span class="lang-fr">Business IA</span>
+                <span class="lang-en d-none">Business AI</span>
+              </h3>
+              <p class="card-text fs-5">
+                <span class="lang-fr">39 € / mois / utilisateur</span>
+                <span class="lang-en d-none">€39 / month / user</span>
+              </p>
               <ul class="list-group list-group-flush flex-grow-1">
-                <li class="list-group-item">Toutes les fonctionnalités de l'offre Professionnel</li>
-                <li class="list-group-item">Appels illimités vers Europe et Amérique du Nord</li>
-                <li class="list-group-item">Analyse avancée des appels par intelligence artificielle</li>
-                <li class="list-group-item">Intégration CRM complète (niveau 2)</li>
-                <li class="list-group-item">Support prioritaire 24/7</li>
-                <li class="list-group-item">Formation personnalisée pour vos équipes</li>
+                <li class="list-group-item">
+                  <span class="lang-fr"
+                    >Toutes les fonctionnalités de l'offre Professionnel</span
+                  >
+                  <span class="lang-en d-none"
+                    >All features of the Professional plan</span
+                  >
+                </li>
+                <li class="list-group-item">
+                  <span class="lang-fr"
+                    >Appels illimités vers Europe et Amérique du Nord</span
+                  >
+                  <span class="lang-en d-none"
+                    >Unlimited calls to Europe and North America</span
+                  >
+                </li>
+                <li class="list-group-item">
+                  <span class="lang-fr"
+                    >Analyse avancée des appels par intelligence
+                    artificielle</span
+                  >
+                  <span class="lang-en d-none"
+                    >Advanced call analytics by artificial intelligence</span
+                  >
+                </li>
+                <li class="list-group-item">
+                  <span class="lang-fr"
+                    >Intégration CRM complète (niveau 2)</span
+                  >
+                  <span class="lang-en d-none"
+                    >Complete CRM integration (level 2)</span
+                  >
+                </li>
+                <li class="list-group-item">
+                  <span class="lang-fr">Support prioritaire 24/7</span>
+                  <span class="lang-en d-none">Priority support 24/7</span>
+                </li>
+                <li class="list-group-item">
+                  <span class="lang-fr"
+                    >Formation personnalisée pour vos équipes</span
+                  >
+                  <span class="lang-en d-none"
+                    >Customized training for your teams</span
+                  >
+                </li>
               </ul>
               <div class="mt-auto pt-3">
-                <a href="#contact" class="btn btn-primary w-100">Souscrire</a>
+                <a href="#contact" class="btn btn-primary w-100">
+                  <span class="lang-fr">Souscrire</span>
+                  <span class="lang-en d-none">Subscribe</span>
+                </a>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-    
-    
+
     <section id="comparison" class="section container">
-      <h2 class="text-center mb-4">Comparaison des Offres</h2>
+      <h2 class="text-center mb-4">
+        <span class="lang-fr">Comparaison des Offres</span>
+        <span class="lang-en d-none">Plan Comparison</span>
+      </h2>
       <div class="table-responsive">
         <table class="table table-bordered table-striped">
           <thead class="table-primary">
             <tr>
-              <th>Fonctionnalités</th>
-              <th>Essentiel</th>
-              <th>Professionnel</th>
-              <th>Business AI</th>
+              <th>
+                <span class="lang-fr">Fonctionnalités</span>
+                <span class="lang-en d-none">Features</span>
+              </th>
+              <th>
+                <span class="lang-fr">Essentiel</span>
+                <span class="lang-en d-none">Essential</span>
+              </th>
+              <th>
+                <span class="lang-fr">Professionnel</span>
+                <span class="lang-en d-none">Professional</span>
+              </th>
+              <th>
+                <span class="lang-fr">Business AI</span>
+                <span class="lang-en d-none">Business AI</span>
+              </th>
             </tr>
           </thead>
           <tbody>
             <!-- Téléphonie de base -->
             <tr>
-              <td class="table-light" colspan="4"><strong>Téléphonie de base</strong></td>
+              <td class="table-light" colspan="4">
+                <strong>
+                  <span class="lang-fr">Téléphonie de base</span>
+                  <span class="lang-en d-none">Basic Telephony</span>
+                </strong>
+              </td>
             </tr>
             <tr>
-              <td>Numéro VoIP inclus</td>
+              <td>
+                <span class="lang-fr">Numéro VoIP inclus</span>
+                <span class="lang-en d-none">VoIP number included</span>
+              </td>
               <td>✔️</td>
               <td>✔️</td>
               <td>✔️</td>
             </tr>
             <tr>
-              <td>Application web et mobile</td>
+              <td>
+                <span class="lang-fr">Application web et mobile</span>
+                <span class="lang-en d-none">Web and mobile app</span>
+              </td>
               <td>✔️</td>
               <td>✔️</td>
               <td>✔️</td>
             </tr>
             <tr>
-              <td>Messagerie vocale</td>
+              <td>
+                <span class="lang-fr">Messagerie vocale</span>
+                <span class="lang-en d-none">Voicemail</span>
+              </td>
               <td>✔️</td>
               <td>✔️</td>
               <td>✔️</td>
@@ -302,22 +606,40 @@
 
             <!-- Appels -->
             <tr>
-              <td class="table-light" colspan="4"><strong>Forfaits d'appels</strong></td>
+              <td class="table-light" colspan="4">
+                <strong>
+                  <span class="lang-fr">Forfaits d'appels</span>
+                  <span class="lang-en d-none">Call Plans</span>
+                </strong>
+              </td>
             </tr>
             <tr>
-              <td>Appels illimités vers fixes France</td>
+              <td>
+                <span class="lang-fr">Appels illimités vers fixes</span>
+                <span class="lang-en d-none">Unlimited calls to landlines</span>
+              </td>
               <td>✔️</td>
               <td>✔️</td>
               <td>✔️</td>
             </tr>
             <tr>
-              <td>Appels vers mobiles France</td>
+              <td>
+                <span class="lang-fr">Appels vers mobiles</span>
+                <span class="lang-en d-none">Calls to mobile phones</span>
+              </td>
               <td>❌</td>
               <td>✔️</td>
               <td>✔️</td>
             </tr>
             <tr>
-              <td>Appels illimités Europe & Amérique du Nord</td>
+              <td>
+                <span class="lang-fr"
+                  >Appels illimités Europe & Amérique du Nord</span
+                >
+                <span class="lang-en d-none"
+                  >Unlimited calls to Europe & North America</span
+                >
+              </td>
               <td>❌</td>
               <td>❌</td>
               <td>✔️</td>
@@ -325,22 +647,38 @@
 
             <!-- Fonctionnalités IA -->
             <tr>
-              <td class="table-light" colspan="4"><strong>Fonctionnalités IA</strong></td>
+              <td class="table-light" colspan="4">
+                <strong>
+                  <span class="lang-fr">Fonctionnalités IA</span>
+                  <span class="lang-en d-none">AI Features</span>
+                </strong>
+              </td>
             </tr>
             <tr>
-              <td>Transcription basique des messages</td>
+              <td>
+                <span class="lang-fr">Transcription basique des messages</span>
+                <span class="lang-en d-none">Basic message transcription</span>
+              </td>
               <td>✔️</td>
               <td>✔️</td>
               <td>✔️</td>
             </tr>
             <tr>
-              <td>Résumé automatique des appels</td>
+              <td>
+                <span class="lang-fr">Résumé automatique des appels</span>
+                <span class="lang-en d-none">Automatic call summary</span>
+              </td>
               <td>❌</td>
               <td>✔️</td>
               <td>✔️</td>
             </tr>
             <tr>
-              <td>Analyse avancée des conversations</td>
+              <td>
+                <span class="lang-fr">Analyse avancée des conversations</span>
+                <span class="lang-en d-none"
+                  >Advanced conversation analysis</span
+                >
+              </td>
               <td>❌</td>
               <td>❌</td>
               <td>✔️</td>
@@ -348,22 +686,48 @@
 
             <!-- Intégrations et Support -->
             <tr>
-              <td class="table-light" colspan="4"><strong>Intégrations et Support</strong></td>
+              <td class="table-light" colspan="4">
+                <strong>
+                  <span class="lang-fr">Intégrations et Support</span>
+                  <span class="lang-en d-none">Integrations and Support</span>
+                </strong>
+              </td>
             </tr>
             <tr>
-              <td>Intégration CRM</td>
+              <td>
+                <span class="lang-fr">Intégration CRM</span>
+                <span class="lang-en d-none">CRM Integration</span>
+              </td>
               <td>❌</td>
-              <td>Niveau 1</td>
-              <td>Niveau 2</td>
+              <td>
+                <span class="lang-fr">Niveau 1</span>
+                <span class="lang-en d-none">Level 1</span>
+              </td>
+              <td>
+                <span class="lang-fr">Niveau 2</span>
+                <span class="lang-en d-none">Level 2</span>
+              </td>
             </tr>
             <tr>
-              <td>Support technique</td>
-              <td>Standard</td>
-              <td>Avancé</td>
+              <td>
+                <span class="lang-fr">Support technique</span>
+                <span class="lang-en d-none">Technical support</span>
+              </td>
+              <td>
+                <span class="lang-fr">Standard</span>
+                <span class="lang-en d-none">Standard</span>
+              </td>
+              <td>
+                <span class="lang-fr">Avancé</span>
+                <span class="lang-en d-none">Advanced</span>
+              </td>
               <td>24/7</td>
             </tr>
             <tr>
-              <td>Formation personnalisée</td>
+              <td>
+                <span class="lang-fr">Formation personnalisée</span>
+                <span class="lang-en d-none">Custom training</span>
+              </td>
               <td>❌</td>
               <td>❌</td>
               <td>✔️</td>
@@ -372,19 +736,49 @@
         </table>
       </div>
     </section>
-    
+
     <section id="advantages" class="section container">
-      <h2 class="text-center mb-4">Pourquoi nous choisir&nbsp;?</h2>
+      <h2 class="text-center mb-4">
+        <span class="lang-fr">Pourquoi nous choisir&nbsp;?</span>
+        <span class="lang-en d-none">Why choose us?</span>
+      </h2>
       <div class="row g-4">
         <div class="col-md-4">
           <div class="card h-100">
             <div class="card-body">
-              <h3 class="card-title text-primary">Simplicité maximale</h3>
+              <h3 class="card-title text-primary">
+                <span class="lang-fr">Simplicité maximale</span>
+                <span class="lang-en d-none">Maximum Simplicity</span>
+              </h3>
               <ul class="list-group list-group-flush">
-                <li class="list-group-item">Déploiement en 24h sans matériel complexe</li>
-                <li class="list-group-item">Interface intuitive web et mobile</li>
-                <li class="list-group-item">Gestion en ligne simplifiée</li>
-                <li class="list-group-item">Numéros géographiques inclus (01, 02, 03...)</li>
+                <li class="list-group-item">
+                  <span class="lang-fr"
+                    >Déploiement en 24h sans matériel complexe</span
+                  >
+                  <span class="lang-en d-none"
+                    >24-hour deployment with no complex hardware</span
+                  >
+                </li>
+                <li class="list-group-item">
+                  <span class="lang-fr">Interface intuitive web et mobile</span>
+                  <span class="lang-en d-none"
+                    >Intuitive web and mobile interface</span
+                  >
+                </li>
+                <li class="list-group-item">
+                  <span class="lang-fr">Gestion en ligne simplifiée</span>
+                  <span class="lang-en d-none"
+                    >Simplified online management</span
+                  >
+                </li>
+                <li class="list-group-item">
+                  <span class="lang-fr"
+                    >Numéros géographiques inclus (01, 02, 03...)</span
+                  >
+                  <span class="lang-en d-none"
+                    >Geographic numbers included</span
+                  >
+                </li>
               </ul>
             </div>
           </div>
@@ -393,12 +787,39 @@
         <div class="col-md-4">
           <div class="card h-100">
             <div class="card-body">
-              <h3 class="card-title text-primary">Innovation IA</h3>
+              <h3 class="card-title text-primary">
+                <span class="lang-fr">Innovation IA</span>
+                <span class="lang-en d-none">AI Innovation</span>
+              </h3>
               <ul class="list-group list-group-flush">
-                <li class="list-group-item">Transcription automatique des messages vocaux</li>
-                <li class="list-group-item">Analyse avancée des conversations client</li>
-                <li class="list-group-item">Résumés intelligents des appels</li>
-                <li class="list-group-item">Détection automatique des mots-clés</li>
+                <li class="list-group-item">
+                  <span class="lang-fr"
+                    >Transcription automatique des messages vocaux</span
+                  >
+                  <span class="lang-en d-none"
+                    >Automatic voicemail transcription</span
+                  >
+                </li>
+                <li class="list-group-item">
+                  <span class="lang-fr"
+                    >Analyse avancée des conversations client</span
+                  >
+                  <span class="lang-en d-none"
+                    >Advanced customer conversation analysis</span
+                  >
+                </li>
+                <li class="list-group-item">
+                  <span class="lang-fr">Résumés intelligents des appels</span>
+                  <span class="lang-en d-none">Intelligent call summaries</span>
+                </li>
+                <li class="list-group-item">
+                  <span class="lang-fr"
+                    >Détection automatique des mots-clés</span
+                  >
+                  <span class="lang-en d-none"
+                    >Automatic keyword detection</span
+                  >
+                </li>
               </ul>
             </div>
           </div>
@@ -407,12 +828,35 @@
         <div class="col-md-4">
           <div class="card h-100">
             <div class="card-body">
-              <h3 class="card-title text-primary">Sécurité française</h3>
+              <h3 class="card-title text-primary">
+                <span class="lang-fr">Sécurité française</span>
+                <span class="lang-en d-none">French Security</span>
+              </h3>
               <ul class="list-group list-group-flush">
-                <li class="list-group-item">VPN intégré et chiffrement SRTP/ZRTP</li>
-                <li class="list-group-item">Hébergement 100% français (ISO 27001)</li>
-                <li class="list-group-item">Conformité RGPD et ARCEP</li>
-                <li class="list-group-item">Protection totale des données</li>
+                <li class="list-group-item">
+                  <span class="lang-fr"
+                    >VPN intégré et chiffrement SRTP/ZRTP</span
+                  >
+                  <span class="lang-en d-none"
+                    >Built-in VPN and SRTP/ZRTP encryption</span
+                  >
+                </li>
+                <li class="list-group-item">
+                  <span class="lang-fr"
+                    >Hébergement 100% français (ISO 27001)</span
+                  >
+                  <span class="lang-en d-none"
+                    >100% French hosting (ISO 27001)</span
+                  >
+                </li>
+                <li class="list-group-item">
+                  <span class="lang-fr">Conformité RGPD et ARCEP</span>
+                  <span class="lang-en d-none">GDPR and ARCEP compliance</span>
+                </li>
+                <li class="list-group-item">
+                  <span class="lang-fr">Protection totale des données</span>
+                  <span class="lang-en d-none">Complete data protection</span>
+                </li>
               </ul>
             </div>
           </div>
@@ -421,12 +865,31 @@
         <div class="col-md-4">
           <div class="card h-100">
             <div class="card-body">
-              <h3 class="card-title text-primary">Support premium</h3>
+              <h3 class="card-title text-primary">
+                <span class="lang-fr">Support premium</span>
+                <span class="lang-en d-none">Premium Support</span>
+              </h3>
               <ul class="list-group list-group-flush">
-                <li class="list-group-item">Interlocuteur dédié en français</li>
-                <li class="list-group-item">Accompagnement personnalisé</li>
-                <li class="list-group-item">Formation sur mesure disponible</li>
-                <li class="list-group-item">Support technique réactif</li>
+                <li class="list-group-item">
+                  <span class="lang-fr">Interlocuteur dédié en français</span>
+                  <span class="lang-en d-none"
+                    >Dedicated French-speaking contact</span
+                  >
+                </li>
+                <li class="list-group-item">
+                  <span class="lang-fr">Accompagnement personnalisé</span>
+                  <span class="lang-en d-none">Personalized guidance</span>
+                </li>
+                <li class="list-group-item">
+                  <span class="lang-fr">Formation sur mesure disponible</span>
+                  <span class="lang-en d-none">Custom training available</span>
+                </li>
+                <li class="list-group-item">
+                  <span class="lang-fr">Support technique réactif</span>
+                  <span class="lang-en d-none"
+                    >Responsive technical support</span
+                  >
+                </li>
               </ul>
             </div>
           </div>
@@ -435,12 +898,29 @@
         <div class="col-md-4">
           <div class="card h-100">
             <div class="card-body">
-              <h3 class="card-title text-primary">Tarification claire</h3>
+              <h3 class="card-title text-primary">
+                <span class="lang-fr">Tarification claire</span>
+                <span class="lang-en d-none">Clear Pricing</span>
+              </h3>
               <ul class="list-group list-group-flush">
-                <li class="list-group-item">Prix tout compris dès 19€/mois</li>
-                <li class="list-group-item">Pas de frais cachés</li>
-                <li class="list-group-item">Appels illimités inclus</li>
-                <li class="list-group-item">Facturation transparente</li>
+                <li class="list-group-item">
+                  <span class="lang-fr">Prix tout compris dès 19€/mois</span>
+                  <span class="lang-en d-none"
+                    >All-inclusive pricing from €19/month</span
+                  >
+                </li>
+                <li class="list-group-item">
+                  <span class="lang-fr">Pas de frais cachés</span>
+                  <span class="lang-en d-none">No hidden fees</span>
+                </li>
+                <li class="list-group-item">
+                  <span class="lang-fr">Appels illimités inclus</span>
+                  <span class="lang-en d-none">Unlimited calls included</span>
+                </li>
+                <li class="list-group-item">
+                  <span class="lang-fr">Facturation transparente</span>
+                  <span class="lang-en d-none">Transparent billing</span>
+                </li>
               </ul>
             </div>
           </div>
@@ -449,12 +929,31 @@
         <div class="col-md-4">
           <div class="card h-100">
             <div class="card-body">
-              <h3 class="card-title text-primary">Solutions métier</h3>
+              <h3 class="card-title text-primary">
+                <span class="lang-fr">Solutions métier</span>
+                <span class="lang-en d-none">Business Solutions</span>
+              </h3>
               <ul class="list-group list-group-flush">
-                <li class="list-group-item">Adapté aux cabinets médicaux</li>
-                <li class="list-group-item">Optimisé pour l'immobilier</li>
-                <li class="list-group-item">Intégration CRM sur mesure</li>
-                <li class="list-group-item">Compatible tous secteurs</li>
+                <li class="list-group-item">
+                  <span class="lang-fr">Adapté aux cabinets médicaux</span>
+                  <span class="lang-en d-none"
+                    >Suitable for medical practices</span
+                  >
+                </li>
+                <li class="list-group-item">
+                  <span class="lang-fr">Optimisé pour l'immobilier</span>
+                  <span class="lang-en d-none">Optimized for real estate</span>
+                </li>
+                <li class="list-group-item">
+                  <span class="lang-fr">Intégration CRM sur mesure</span>
+                  <span class="lang-en d-none">Custom CRM integration</span>
+                </li>
+                <li class="list-group-item">
+                  <span class="lang-fr">Compatible tous secteurs</span>
+                  <span class="lang-en d-none"
+                    >Compatible with all sectors</span
+                  >
+                </li>
               </ul>
             </div>
           </div>
@@ -463,7 +962,7 @@
     </section>
     <!--
     <section id="france" class="section container">
-      <h2 class="text-center mb-4">Service VoIP en France</h2>
+      <h2 class="text-center mb-4">Service VoIP en Europe</h2>
       <div class="row g-4">
         <div class="col-lg-8 mx-auto">
           <div class="card mb-4">
@@ -523,7 +1022,7 @@
           <div class="alert alert-info">
             <h4 class="alert-heading">Saviez-vous ?</h4>
             <p>
-              La VoIP représente aujourd'hui plus de 80% des communications d'entreprise en France. 
+              La VoIP représente aujourd'hui plus de 80% des communications d'entreprise en Europe. 
               Le choix d'un opérateur national garantit non seulement la conformité réglementaire, 
               mais aussi une meilleure qualité de service grâce à la proximité des infrastructures.
             </p>
@@ -533,16 +1032,23 @@
     </section>
      -->
     <section id="contact" class="section container">
-      <h2 class="text-center mb-4">Contact</h2>
+      <h2 class="text-center mb-4">
+        <span class="lang-fr">Contact</span>
+        <span class="lang-en d-none">Contact</span>
+      </h2>
       <form id="contact-form" method="POST" class="container">
         <div class="mb-3">
-          <label for="name" class="form-label">Votre nom</label>
+          <label for="name" class="form-label">
+            <span class="lang-fr">Votre nom</span>
+            <span class="lang-en d-none">Your name</span>
+          </label>
           <input
             type="text"
             class="form-control"
             id="name"
             name="name"
             placeholder="Votre nom"
+            data-placeholder-en="Your name"
             required
           />
         </div>
@@ -568,42 +1074,69 @@
             required
           ></textarea>
         </div>
-        <button type="submit" class="btn btn-primary w-100">Envoyer</button>
-        
+        <button type="submit" class="btn btn-primary w-100">
+          <span class="lang-fr">Envoyer</span>
+          <span class="lang-en d-none">Send</span>
+        </button>
+
         <!-- Add these elements for form feedback -->
         <div id="loader" class="d-none text-center mt-3">
           <div class="spinner-border text-primary" role="status">
             <span class="visually-hidden">Chargement...</span>
           </div>
         </div>
-        <div id="success-message" class="alert alert-success mt-3 d-none" role="alert"></div>
-        <div id="error-message" class="alert alert-danger mt-3 d-none" role="alert"></div>
+        <div
+          id="success-message"
+          class="alert alert-success mt-3 d-none"
+          role="alert"
+        ></div>
+        <div
+          id="error-message"
+          class="alert alert-danger mt-3 d-none"
+          role="alert"
+        ></div>
       </form>
     </section>
     <div id="cookie-banner" class="cookie-banner">
       <p>
-        Ce site utilise des cookies pour améliorer votre expérience.
+        <span class="lang-fr"
+          >Ce site utilise des cookies pour améliorer votre expérience.</span
+        >
+        <span class="lang-en d-none"
+          >This site uses cookies to improve your experience.</span
+        >
         <a
           class="link"
           href="./cookie-policy.html"
           target="_blank"
-          aria-label="Lire la politique de cookies"
-          >En savoir plus</a
+          aria-label="Read cookie policy"
         >
-        <button id="accept-cookies" aria-label="Accepter les cookies">
-          Accepter
+          <span class="lang-fr">En savoir plus</span>
+          <span class="lang-en d-none">Learn more</span>
+        </a>
+        <button id="accept-cookies" aria-label="Accept cookies">
+          <span class="lang-fr">Accepter</span>
+          <span class="lang-en d-none">Accept</span>
         </button>
         <button
           id="reject-cookies"
           class="button-inverted"
-          aria-label="Refuser les cookies"
+          aria-label="Reject cookies"
         >
-          Refuser
+          <span class="lang-fr">Refuser</span>
+          <span class="lang-en d-none">Decline</span>
         </button>
       </p>
     </div>
     <footer>
-      <div class="text-center">2025 VOIPIZ. Tous droits réservés.</div>
+      <div class="text-center">
+        2025 VOIPIZ. <span class="lang-fr">Tous droits réservés.</span
+        ><span class="lang-en d-none">All rights reserved.</span>
+        <button id="language-switch" class="btn btn-sm btn-outline-light ms-3">
+          <span class="lang-fr">English</span>
+          <span class="lang-en d-none">Français</span>
+        </button>
+      </div>
     </footer>
 
     <script type="module" src="js/main.js"></script>
