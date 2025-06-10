@@ -10,7 +10,7 @@ export function initNavigation() {
       const targetSection = document.querySelector(targetId);
 
       if (targetSection) {
-        const offset = header.offsetHeight; // Dynamically calculate header height
+        const offset = header.offsetHeight; 
         const topPosition = targetSection.offsetTop - offset;
 
         window.scrollTo({
