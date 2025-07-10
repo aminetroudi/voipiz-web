@@ -11,8 +11,31 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const NODE_ENV = process.env.NODE_ENV || "development";
 
-// Add security headers
-app.use(helmet());
+// Add security headers with custom CSP for Google Analytics
+app.use(helmet({
+  contentSecurityPolicy: {
+    directives: {
+      defaultSrc: ["'self'"],
+      scriptSrc: [
+        "'self'", 
+        "'unsafe-inline'", // Allow inline scripts for Google Analytics
+        "https://www.googletagmanager.com", // Allow Google Tag Manager
+        "https://www.google-analytics.com", // Allow Google Analytics
+      ],
+      styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
+      fontSrc: ["'self'", "https://fonts.gstatic.com"],
+      imgSrc: ["'self'", "data:", "https:", "blob:"],
+      connectSrc: [
+        "'self'", 
+        "https://www.google-analytics.com", // Allow GA connections
+        "https://analytics.google.com", // Allow GA4 connections
+        "https://*.google-analytics.com", // Allow regional GA endpoints
+        "https://region1.google-analytics.com", // Specific regional endpoint
+        "https://stats.g.doubleclick.net", // Google Analytics data collection
+      ],
+    },
+  },
+}));
 
 // Rate limiting
 const limiter = rateLimit({
