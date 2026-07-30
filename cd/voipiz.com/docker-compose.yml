@@ -1,0 +1,34 @@
+services:
+  web:
+    build:
+      context: ../..
+      dockerfile: Dockerfile
+    container_name: voipiz-web
+    restart: unless-stopped
+    # Mail credentials for the /contact form live outside the synced directory:
+    # deploy.sh clears files under the remote dir on every push, which would
+    # take the secrets with it. Create it once, by hand, on the server.
+    env_file:
+      - /home/mag/voipiz-web.env
+    expose:
+      - "3000"
+    networks:
+      - traefik
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=traefik"
+      - "traefik.http.routers.voipiz.entrypoints=websecure"
+      - "traefik.http.routers.voipiz.rule=Host(`voipiz.com`) || Host(`www.voipiz.com`)"
+      - "traefik.http.routers.voipiz.priority=20"
+      - "traefik.http.routers.voipiz.tls=true"
+      - "traefik.http.routers.voipiz.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.voipiz.middlewares=voipiz-www,security-headers@file,compress@file"
+      - "traefik.http.services.voipiz.loadbalancer.server.port=3000"
+      # one canonical host: www folds into the apex
+      - "traefik.http.middlewares.voipiz-www.redirectregex.regex=^https?://www\\.voipiz\\.com/(.*)"
+      - "traefik.http.middlewares.voipiz-www.redirectregex.replacement=https://voipiz.com/$${1}"
+      - "traefik.http.middlewares.voipiz-www.redirectregex.permanent=true"
+
+networks:
+  traefik:
+    external: true
