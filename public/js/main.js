@@ -1,13 +1,11 @@
 import { initNavigation } from "./navigation.js";
 import { initFormHandler } from "./formHandler.js";
 import { initCookieBanner } from "./cookieBanner.js";
-import { initLanguageManager } from "./languageManager.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   initNavigation();
   initFormHandler();
   initCookieBanner();
-  initLanguageManager();
 
   const year = document.getElementById("year");
   if (year) year.textContent = String(new Date().getFullYear());

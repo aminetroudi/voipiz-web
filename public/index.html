@@ -93,8 +93,8 @@
           <ul class="hero-specs">
             <li><b>24&nbsp;h</b><span class="lang-fr">Déploiement</span><span class="lang-en d-none">Deployment</span></li>
             <li><b>SRTP / ZRTP</b><span class="lang-fr">Chiffrement</span><span class="lang-en d-none">Encryption</span></li>
-            <li><b>RGPD</b><span class="lang-fr">Hébergement européen</span><span class="lang-en d-none">European hosting</span></li>
-            <li><b>99,99&nbsp;%</b><span class="lang-fr">Disponibilité</span><span class="lang-en d-none">Uptime</span></li>
+            <li><b><span class="lang-fr">RGPD</span><span class="lang-en d-none">GDPR</span></b><span class="lang-fr">Hébergement européen</span><span class="lang-en d-none">European hosting</span></li>
+            <li><b><span class="lang-fr">99,99&nbsp;%</span><span class="lang-en d-none">99.99%</span></b><span class="lang-fr">Disponibilité</span><span class="lang-en d-none">Uptime</span></li>
           </ul>
         </div>
 
@@ -309,6 +309,69 @@
       <button class="btn btn-ghost" id="reject-cookies" type="button"><span class="lang-fr">Refuser</span><span class="lang-en d-none">Decline</span></button>
     </div>
 
-    <script type="module" src="js/main.js"></script>
+    <!-- Language switch is a classic inline script on purpose. It used to live in
+         the module graph, and when one module in that graph 404s the whole graph
+         fails silently and every behaviour on the page dies with it — which is
+         exactly what a stale main.js importing the since-deleted reveal.js does.
+         Core UX should not be one bad import away from gone. -->
+    <script>
+      (function () {
+        var KEY = "saved-language";
+        var lang = "fr";
+        try {
+          var saved = localStorage.getItem(KEY);
+          if (saved === "en" || saved === "fr") lang = saved;
+        } catch (e) {}
+
+        function apply(next) {
+          document.documentElement.setAttribute("lang", next);
+          var i, els;
+          els = document.querySelectorAll(".lang-fr");
+          for (i = 0; i < els.length; i++) els[i].classList.toggle("d-none", next !== "fr");
+          els = document.querySelectorAll(".lang-en");
+          for (i = 0; i < els.length; i++) els[i].classList.toggle("d-none", next !== "en");
+          els = document.querySelectorAll(".lang [data-lang]");
+          for (i = 0; i < els.length; i++) {
+            els[i].setAttribute("aria-pressed", String(els[i].getAttribute("data-lang") === next));
+          }
+          els = document.querySelectorAll("[data-placeholder-en]");
+          for (i = 0; i < els.length; i++) {
+            els[i].setAttribute(
+              "placeholder",
+              next === "en" ? els[i].getAttribute("data-placeholder-en")
+                            : els[i].getAttribute("data-placeholder-fr") || ""
+            );
+          }
+        }
+
+        function start() {
+          // keep the French placeholders before anything overwrites them
+          var els = document.querySelectorAll("[data-placeholder-en]");
+          for (var i = 0; i < els.length; i++) {
+            if (!els[i].getAttribute("data-placeholder-fr")) {
+              els[i].setAttribute("data-placeholder-fr", els[i].getAttribute("placeholder") || "");
+            }
+          }
+          apply(lang);
+          var buttons = document.querySelectorAll(".lang [data-lang]");
+          for (var j = 0; j < buttons.length; j++) {
+            buttons[j].addEventListener("click", function () {
+              var next = this.getAttribute("data-lang");
+              if (next === lang) return;
+              lang = next;
+              apply(lang);
+              try { localStorage.setItem(KEY, lang); } catch (e) {}
+            });
+          }
+        }
+
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", start);
+        } else {
+          start();
+        }
+      })();
+    </script>
+    <script type="module" src="js/main.js?v=2"></script>
   </body>
 </html>
