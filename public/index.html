@@ -60,9 +60,10 @@
           </ul>
         </nav>
         <div class="nav-actions">
-          <button class="btn-lang" id="language-switch" type="button" aria-label="Switch language">
-            <span class="lang-fr">EN</span><span class="lang-en d-none">FR</span>
-          </button>
+          <div class="lang" role="group" aria-label="Langue / Language">
+            <button type="button" data-lang="fr" aria-pressed="true">FR</button>
+            <button type="button" data-lang="en" aria-pressed="false">EN</button>
+          </div>
           <button class="nav-toggle" id="nav-toggle" type="button"
                   aria-expanded="false" aria-controls="nav-links" aria-label="Menu">
             <span></span>
@@ -86,7 +87,7 @@
           <p class="hero-claim"><span class="lang-fr">La téléphonie d’entreprise, augmentée par l’intelligence artificielle.</span><span class="lang-en d-none">Business telephony, augmented by artificial intelligence.</span></p>
           <p class="hero-sub"><span class="lang-fr">Transcriptions automatiques, résumés d’appels, analyses en temps réel : gagnez en efficacité avec une téléphonie nouvelle génération.</span><span class="lang-en d-none">Automatic transcriptions, call summaries, real-time analytics: boost your efficiency with next-generation telephony.</span></p>
           <div class="hero-cta">
-            <a href="#contact" class="btn btn-primary"><span class="lang-fr">Demander une démo</span><span class="lang-en d-none">Request a demo</span></a>
+            <a href="#contact" class="btn btn-primary"><span class="lang-fr">Essai gratuit</span><span class="lang-en d-none">Free trial</span></a>
             <a href="#services" class="btn btn-ghost"><span class="lang-fr">Voir les services</span><span class="lang-en d-none">See the services</span></a>
           </div>
           <ul class="hero-specs">
@@ -104,7 +105,6 @@
         <div class="shell">
           <div class="svc-head">
             <div>
-              <p class="eyebrow"><span class="lang-fr">01 — Services</span><span class="lang-en d-none">01 — Services</span></p>
               <h2 class="h-section"><span class="lang-fr">Tout ce qu’il faut pour<br />décrocher, partout.</span><span class="lang-en d-none">Everything you need to<br />pick up, anywhere.</span></h2>
             </div>
             <p class="lede"><span class="lang-fr">Une ligne professionnelle complète : numéros, applications, IA et sécurité, opérées depuis notre propre infrastructure.</span><span class="lang-en d-none">A complete business line: numbers, apps, AI and security, run on infrastructure we operate ourselves.</span></p>
@@ -162,7 +162,6 @@
         <div class="shell">
           <div class="why-grid">
             <div class="why-intro">
-              <p class="eyebrow"><span class="lang-fr">02 — Pourquoi nous</span><span class="lang-en d-none">02 — Why us</span></p>
               <h2 class="h-section"><span class="lang-fr">Opérateur,<br />pas revendeur.</span><span class="lang-en d-none">An operator,<br />not a reseller.</span></h2>
               <p class="lede"><span class="lang-fr">Nous exploitons notre propre plateforme et nos propres serveurs. C’est ce qui nous permet de déployer en 24&nbsp;heures, de chiffrer chaque appel et de répondre en français.</span><span class="lang-en d-none">We run our own platform and our own servers. That is what lets us deploy in 24 hours, encrypt every call, and answer the phone ourselves.</span></p>
             </div>
@@ -236,23 +235,8 @@
         <div class="shell">
           <div class="contact-grid">
             <div>
-              <p class="eyebrow"><span class="lang-fr">03 — Contact</span><span class="lang-en d-none">03 — Contact</span></p>
-              <h2 class="h-section"><span class="lang-fr">Parlons de votre<br />installation.</span><span class="lang-en d-none">Let’s talk about your<br />setup.</span></h2>
-              <p class="lede"><span class="lang-fr">Dites-nous combien de lignes vous avez et ce que vous utilisez aujourd’hui. Nous revenons vers vous avec une proposition concrète.</span><span class="lang-en d-none">Tell us how many lines you have and what you use today. We will come back with something concrete.</span></p>
-              <ul class="contact-lines">
-                <li>
-                  <span class="k"><span class="lang-fr">Téléphone</span><span class="lang-en d-none">Phone</span></span>
-                  <a href="tel:+33622926136">+33&nbsp;6&nbsp;22&nbsp;92&nbsp;61&nbsp;36</a>
-                </li>
-                <li>
-                  <span class="k"><span class="lang-fr">Où nous sommes</span><span class="lang-en d-none">Where we are</span></span>
-                  <span class="v">Strasbourg, France</span>
-                </li>
-                <li>
-                  <span class="k">LinkedIn</span>
-                  <a href="https://linkedin.com/company/voipiz" target="_blank" rel="noopener">linkedin.com/company/voipiz</a>
-                </li>
-              </ul>
+              <h2 class="h-section"><span class="lang-fr">Essayez, gratuitement.</span><span class="lang-en d-none">Try it, free.</span></h2>
+              <p class="lede"><span class="lang-fr">Une ligne de test, montée en 24&nbsp;heures, sans engagement et sans carte bancaire. Dites-nous simplement combien de postes vous voulez essayer.</span><span class="lang-en d-none">A trial line, live within 24 hours, no commitment and no card. Just tell us how many extensions you would like to try.</span></p>
             </div>
 
             <div class="form-panel">
@@ -270,10 +254,10 @@
                 <div class="field">
                   <label for="message"><span class="lang-fr">Votre message</span><span class="lang-en d-none">Your message</span></label>
                   <textarea id="message" name="message" required
-                            placeholder="Nous avons 12 lignes et cherchons à passer à la VoIP…"
-                            data-placeholder-en="We have 12 lines and are looking to move to VoIP…"></textarea>
+                            placeholder="Nous avons 12 postes et voulons tester la VoIP…"
+                            data-placeholder-en="We have 12 extensions and would like to test VoIP…"></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary"><span class="lang-fr">Envoyer</span><span class="lang-en d-none">Send</span></button>
+                <button type="submit" class="btn btn-primary"><span class="lang-fr">Demander l’essai gratuit</span><span class="lang-en d-none">Request the free trial</span></button>
                 <p id="loader" class="d-none"><span class="lang-fr">Envoi en cours…</span><span class="lang-en d-none">Sending…</span></p>
                 <p id="success-message" class="d-none"></p>
                 <p id="error-message" class="d-none"></p>

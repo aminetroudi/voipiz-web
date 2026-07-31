@@ -72,16 +72,19 @@
   --body: 'PublicSans', system-ui, sans-serif;
   --mono: 'DMMono', ui-monospace, 'SF Mono', Menlo, monospace;
 
-  --ink:       #05080d;
-  --ink-2:     #070c13;
-  --panel:     #0b121c;
-  --panel-2:   #101a26;
-  --rule:      #1a2634;
-  --rule-hi:   #27394c;
+  /* Their identity was navy #004f9e. A neutral near-black erased it and left
+     the page looking like any dark template, so the ground is a deep version
+     of the brand blue and teal stays the single accent. */
+  --ink:       #04111f;
+  --ink-2:     #061729;
+  --panel:     #0a1e33;
+  --panel-2:   #0e2740;
+  --rule:      #17334e;
+  --rule-hi:   #23496c;
 
-  --fg:        #e7eef6;
-  --fg-dim:    #93a5b9;
-  --fg-mute:   #5e7288;
+  --fg:        #e8eef6;
+  --fg-dim:    #9bb1c7;
+  --fg-mute:   #64819d;
 
   --signal:    #2ee8c8;              /* pulled from the hero video */
   --signal-ink:#03130f;
@@ -118,16 +121,6 @@ body::before {
     radial-gradient(70% 50% at 15% 0%, rgba(46, 232, 200, 0.07), transparent 70%),
     radial-gradient(60% 45% at 90% 15%, rgba(29, 108, 199, 0.10), transparent 70%);
 }
-body::after {
-  content: "";
-  position: fixed; inset: 0; z-index: -1; pointer-events: none;
-  opacity: 0.32;
-  background-image:
-    repeating-linear-gradient(to right, var(--rule) 0 1px, transparent 1px 96px);
-  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 20%, #000 80%, transparent);
-  mask-image: linear-gradient(to bottom, transparent, #000 20%, #000 80%, transparent);
-}
-
 img, video { max-width: 100%; display: block; }
 
 ::selection { background: var(--signal); color: var(--signal-ink); }
@@ -147,8 +140,8 @@ img, video { max-width: 100%; display: block; }
 /* ---------- Shared type ---------- */
 .eyebrow {
   display: inline-flex; align-items: center; gap: 0.6rem;
-  font-family: var(--mono); font-size: 0.7rem; font-weight: 500;
-  letter-spacing: 0.22em; text-transform: uppercase; color: var(--signal);
+  font-family: var(--mono); font-size: 0.72rem; font-weight: 500;
+  letter-spacing: 0.12em; text-transform: uppercase; color: var(--signal);
   margin: 0 0 1.1rem;
 }
 .eyebrow::before { content: ""; width: 1.8rem; height: 1px; background: var(--signal); opacity: 0.7; }
@@ -203,11 +196,12 @@ img, video { max-width: 100%; display: block; }
 }
 
 .nav-links { display: flex; align-items: center; gap: 0.3rem; list-style: none; margin: 0; padding: 0; }
+/* Mono is reserved for things that are actually numbers or specs. Using it
+   for navigation and form labels too made every surface read as a terminal. */
 .nav-link {
   display: block; padding: 0.5rem 0.85rem;
-  font-family: var(--mono); font-size: 0.74rem;
-  letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--fg-dim); text-decoration: none;
+  font-family: var(--body); font-size: 0.92rem; font-weight: 500;
+  letter-spacing: 0; color: var(--fg-dim); text-decoration: none;
   border-bottom: 1px solid transparent;
   transition: color 0.2s, border-color 0.2s;
 }
@@ -216,14 +210,19 @@ img, video { max-width: 100%; display: block; }
 
 .nav-actions { display: flex; align-items: center; gap: 0.6rem; }
 
-.btn-lang {
-  font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.14em;
-  text-transform: uppercase; color: var(--fg-dim);
-  background: none; border: 1px solid var(--rule); border-radius: 2px;
-  padding: 0.42rem 0.6rem; cursor: pointer;
-  transition: color 0.2s, border-color 0.2s;
+/* Two explicit states rather than a one-word toggle showing the target
+   language, which read as a label of the current one. */
+.lang { display: flex; border: 1px solid var(--rule); border-radius: 3px; overflow: hidden; }
+.lang button {
+  font-family: var(--body); font-size: 0.78rem; font-weight: 600;
+  letter-spacing: 0.02em; color: var(--fg-mute);
+  background: none; border: none; border-left: 1px solid var(--rule);
+  padding: 0.4rem 0.6rem; cursor: pointer;
+  transition: color 0.2s, background 0.2s;
 }
-.btn-lang:hover { color: var(--fg); border-color: var(--rule-hi); }
+.lang button:first-child { border-left: none; }
+.lang button:hover { color: var(--fg); }
+.lang button[aria-pressed="true"] { background: var(--rule); color: var(--fg); }
 
 .nav-toggle {
   display: none; width: 2.4rem; height: 2.4rem;
@@ -266,10 +265,9 @@ img, video { max-width: 100%; display: block; }
 /* ---------- Buttons ---------- */
 .btn {
   display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem;
-  font-family: var(--mono); font-size: 0.78rem; font-weight: 500;
-  letter-spacing: 0.14em; text-transform: uppercase;
-  padding: 0.95rem 1.6rem; border-radius: 2px; border: 1px solid transparent;
-  text-decoration: none; cursor: pointer;
+  font-family: var(--body); font-size: 0.95rem; font-weight: 600;
+  letter-spacing: 0; padding: 0.9rem 1.5rem; border-radius: 3px;
+  border: 1px solid transparent; text-decoration: none; cursor: pointer;
   transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.2s;
 }
 /* hover goes brighter, not paler. The old sheet faded every button to a wash
@@ -352,7 +350,15 @@ img, video { max-width: 100%; display: block; }
 @media (min-width: 900px) { .svc-head { grid-template-columns: 1.1fr 1fr; align-items: end; } }
 
 .svc-list { display: grid; gap: 0; }
-@media (min-width: 900px) { .svc-list { grid-template-columns: 1fr 1fr; column-gap: 4rem; } }
+@media (min-width: 900px) {
+  .svc-list { grid-template-columns: 1fr 1fr; column-gap: 4rem; }
+  /* the first service carries the pitch, so it gets the full measure and a
+     larger title instead of sitting in a perfectly even 2x2 */
+  .svc:first-child { grid-column: 1 / -1; border-top-width: 2px; border-top-color: var(--signal); }
+  .svc:first-child .svc-title { font-size: clamp(1.5rem, 1.1rem + 1.1vw, 2rem); }
+  .svc:first-child .svc-items { columns: 2; column-gap: 4rem; }
+  .svc:first-child .svc-items li { break-inside: avoid; }
+}
 
 .svc { padding-block: 2.2rem; border-top: 1px solid var(--rule); }
 .svc-top { display: flex; align-items: baseline; gap: 0.9rem; margin-bottom: 1rem; }
@@ -409,10 +415,14 @@ img, video { max-width: 100%; display: block; }
 }
 
 /* ---------- Contact ---------- */
-.contact-grid { display: grid; gap: 3rem; }
+/* Not every section gets the same 3.6rem shout. Services is the loud one,
+   why-us is mid, contact is compact and businesslike. */
+.contact-grid { display: grid; gap: 2.5rem; }
 @media (min-width: 900px) {
-  .contact-grid { grid-template-columns: 0.9fr 1.1fr; gap: 4.5rem; align-items: start; }
+  .contact-grid { grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
 }
+#contact .h-section { font-size: clamp(1.8rem, 1.2rem + 2.2vw, 2.7rem); }
+#advantages .h-section { font-size: clamp(1.9rem, 1.25rem + 2.6vw, 3rem); }
 
 .contact-lines { list-style: none; margin: 2rem 0 0; padding: 0; }
 .contact-lines li { border-top: 1px solid var(--rule); padding: 1rem 0; }
@@ -430,19 +440,10 @@ img, video { max-width: 100%; display: block; }
   padding: clamp(1.5rem, 1rem + 2vw, 2.4rem);
   position: relative;
 }
-/* plate corner marks, same instrument register as the rest */
-.form-panel::before, .form-panel::after {
-  content: ""; position: absolute; width: 10px; height: 10px;
-  border-color: var(--signal); opacity: 0.5; pointer-events: none;
-}
-.form-panel::before { top: 6px; left: 6px; border-top: 1px solid; border-left: 1px solid; }
-.form-panel::after { bottom: 6px; right: 6px; border-bottom: 1px solid; border-right: 1px solid; }
-
 .field { margin-bottom: 1.15rem; }
 .field label {
-  display: block; font-family: var(--mono); font-size: 0.66rem;
-  letter-spacing: 0.16em; text-transform: uppercase; color: var(--fg-mute);
-  margin-bottom: 0.45rem;
+  display: block; font-family: var(--body); font-size: 0.85rem; font-weight: 500;
+  color: var(--fg-dim); margin-bottom: 0.4rem;
 }
 .field input, .field textarea {
   width: 100%; font-family: var(--body); font-size: 0.98rem; color: var(--fg);
@@ -472,8 +473,8 @@ img, video { max-width: 100%; display: block; }
 .footer-grid { display: grid; gap: 2.5rem; }
 @media (min-width: 760px) { .footer-grid { grid-template-columns: 1.4fr 1fr 1fr; gap: 3rem; } }
 .footer h4 {
-  font-family: var(--mono); font-size: 0.66rem; font-weight: 500;
-  letter-spacing: 0.18em; text-transform: uppercase; color: var(--fg-mute); margin: 0 0 1rem;
+  font-family: var(--body); font-size: 0.8rem; font-weight: 600;
+  letter-spacing: 0.02em; color: var(--fg-mute); margin: 0 0 1rem;
 }
 .footer ul { list-style: none; margin: 0; padding: 0; }
 .footer li { margin-bottom: 0.55rem; }

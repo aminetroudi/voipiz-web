@@ -1,10 +1,16 @@
 /**
  * FR / EN switch.
  *
- * Fixes a first-click dead spot: init used `localStorage.getItem(...) || "fr"`
- * but never wrote the fallback back, so on a fresh browser the click handler
- * read null, `null === "fr"` was false, and the "switch" set French again.
- * State is held in one variable now, and localStorage is only a cache.
+ * This is an explicit two-state control rather than a one-word toggle. The
+ * toggle showed the *target* language — "EN" while the page was in French —
+ * which reads as a label of the current state, not an offer. With the choice
+ * persisted in localStorage a returning visitor could land in English with the
+ * button reading "FR", i.e. no EN button anywhere and pressing the visible one
+ * gave French. Two buttons with a pressed state cannot be misread.
+ *
+ * Also fixes an earlier first-click dead spot: init used
+ * `localStorage.getItem(...) || "fr"` but never wrote the fallback back, so the
+ * handler read null, `null === "fr"` was false, and the switch set French again.
  */
 const KEY = "saved-language";
 
@@ -15,21 +21,22 @@ export function initLanguageManager() {
   try { saved = localStorage.getItem(KEY); } catch (_) {}
   lang = saved === "en" || saved === "fr" ? saved : "fr";
 
-  // keep the French placeholders before anything overwrites them
+  // capture the French placeholders before anything overwrites them
   document.querySelectorAll("[data-placeholder-en]").forEach((el) => {
     if (!el.dataset.placeholderFr) el.dataset.placeholderFr = el.getAttribute("placeholder") || "";
   });
 
   apply(lang);
 
-  const button = document.getElementById("language-switch");
-  if (button) {
+  document.querySelectorAll(".lang [data-lang]").forEach((button) => {
     button.addEventListener("click", () => {
-      lang = lang === "fr" ? "en" : "fr";
+      const next = button.dataset.lang;
+      if (next === lang) return;
+      lang = next;
       apply(lang);
       try { localStorage.setItem(KEY, lang); } catch (_) {}
     });
-  }
+  });
 }
 
 function apply(next) {
@@ -40,6 +47,10 @@ function apply(next) {
   );
   document.querySelectorAll(".lang-en").forEach((el) =>
     el.classList.toggle("d-none", next !== "en")
+  );
+
+  document.querySelectorAll(".lang [data-lang]").forEach((button) =>
+    button.setAttribute("aria-pressed", String(button.dataset.lang === next))
   );
 
   document.querySelectorAll("[data-placeholder-en]").forEach((el) => {
