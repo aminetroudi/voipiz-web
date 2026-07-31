@@ -503,21 +503,25 @@ img, video { max-width: 100%; display: block; }
 .cookie-banner a { color: var(--signal); }
 .cookie-banner .btn { padding: 0.6rem 1.1rem; font-size: 0.7rem; }
 
-/* ---------- Reveal on scroll ---------- */
-.reveal {
+/* ---------- Reveal on scroll ----------
+   Gated behind .js, which an inline script in <head> adds. Content that is
+   invisible until JavaScript un-hides it is one broken script away from a
+   blank page — so the default state is visible, and the animation is the
+   enhancement rather than the other way round. */
+.js .reveal {
   opacity: 0; transform: translateY(18px);
   transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
               transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
 }
-.reveal.in { opacity: 1; transform: none; }
-.reveal[data-d="1"] { transition-delay: 0.07s; }
-.reveal[data-d="2"] { transition-delay: 0.14s; }
-.reveal[data-d="3"] { transition-delay: 0.21s; }
-.reveal[data-d="4"] { transition-delay: 0.28s; }
-.reveal[data-d="5"] { transition-delay: 0.35s; }
+.js .reveal.in { opacity: 1; transform: none; }
+.js .reveal[data-d="1"] { transition-delay: 0.07s; }
+.js .reveal[data-d="2"] { transition-delay: 0.14s; }
+.js .reveal[data-d="3"] { transition-delay: 0.21s; }
+.js .reveal[data-d="4"] { transition-delay: 0.28s; }
+.js .reveal[data-d="5"] { transition-delay: 0.35s; }
 
-/* one orchestrated load for the hero */
-.hero .shell > * { animation: rise 0.85s cubic-bezier(0.22, 1, 0.36, 1) both; }
+/* one orchestrated load for the hero — same reasoning, same gate */
+.js .hero .shell > * { animation: rise 0.85s cubic-bezier(0.22, 1, 0.36, 1) both; }
 .hero .shell > *:nth-child(1) { animation-delay: 0.05s; }
 .hero .shell > *:nth-child(2) { animation-delay: 0.14s; }
 .hero .shell > *:nth-child(3) { animation-delay: 0.23s; }
@@ -534,7 +538,8 @@ img, video { max-width: 100%; display: block; }
     animation-duration: 0.01ms !important; animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
-  .reveal { opacity: 1; transform: none; }
+  .js .reveal, .js .reveal.in { opacity: 1; transform: none; }
+  .js .hero .shell > * { animation: none; opacity: 1; }
 }
 
 /* ---------- Legal pages (terms.html, cookie-policy.html) ---------- */

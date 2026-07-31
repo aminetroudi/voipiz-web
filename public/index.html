@@ -3,6 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- The reveal animations hide content until JS un-hides it, so they are
+         gated on this class. No JS, broken JS, blocked JS: text still shows. -->
+    <script>document.documentElement.classList.add("js");</script>
     <title>Voipiz — Téléphonie d'entreprise augmentée par l'IA</title>
     <meta
       name="description"
