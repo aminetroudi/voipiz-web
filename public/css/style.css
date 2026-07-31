@@ -503,25 +503,23 @@ img, video { max-width: 100%; display: block; }
 .cookie-banner a { color: var(--signal); }
 .cookie-banner .btn { padding: 0.6rem 1.1rem; font-size: 0.7rem; }
 
-/* ---------- Reveal on scroll ----------
-   Gated behind .js, which an inline script in <head> adds. Content that is
-   invisible until JavaScript un-hides it is one broken script away from a
-   blank page — so the default state is visible, and the animation is the
-   enhancement rather than the other way round. */
-.js .reveal {
-  opacity: 0; transform: translateY(18px);
-  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
-              transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
-}
-.js .reveal.in { opacity: 1; transform: none; }
-.js .reveal[data-d="1"] { transition-delay: 0.07s; }
-.js .reveal[data-d="2"] { transition-delay: 0.14s; }
-.js .reveal[data-d="3"] { transition-delay: 0.21s; }
-.js .reveal[data-d="4"] { transition-delay: 0.28s; }
-.js .reveal[data-d="5"] { transition-delay: 0.35s; }
+/* ---------- Entrances ----------
+   There is deliberately no scroll-reveal here any more.
+
+   It hid every section at opacity 0 and depended on JavaScript to bring it
+   back, which turned any failure in one module into a page with a hero and no
+   body copy. Gating the hidden state behind a .js class did not fix it in the
+   field either. Content is not the place for a mechanism that can fail: the
+   only entrance left is the hero, and that is pure CSS with no JS involved,
+   so it cannot get stuck. `.reveal` is inert and kept only so the markup and
+   the CSS agree.
+
+   If we want the fade-up back later, the right shape is CSS scroll-driven
+   animation (animation-timeline: view()) behind an @supports guard — driven
+   by geometry rather than an event, so there is nothing to get stuck. */
 
 /* one orchestrated load for the hero — same reasoning, same gate */
-.js .hero .shell > * { animation: rise 0.85s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.hero .shell > * { animation: rise 0.85s cubic-bezier(0.22, 1, 0.36, 1) both; }
 .hero .shell > *:nth-child(1) { animation-delay: 0.05s; }
 .hero .shell > *:nth-child(2) { animation-delay: 0.14s; }
 .hero .shell > *:nth-child(3) { animation-delay: 0.23s; }
@@ -538,8 +536,7 @@ img, video { max-width: 100%; display: block; }
     animation-duration: 0.01ms !important; animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
-  .js .reveal, .js .reveal.in { opacity: 1; transform: none; }
-  .js .hero .shell > * { animation: none; opacity: 1; }
+  .hero .shell > * { animation: none; opacity: 1; }
 }
 
 /* ---------- Legal pages (terms.html, cookie-policy.html) ---------- */

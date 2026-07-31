@@ -50,7 +50,23 @@ const limiter = rateLimit({
 });
 
 app.use(cors());
-app.use(express.static(__dirname + "/public")); // Serve static files from the 'public' folder
+// Static files. HTML is never stored, so a visitor cannot end up on an old
+// page that references a mismatched combination of css/js — which is the most
+// likely way a deploy half-lands in someone's browser. Fonts are
+// content-addressed by name and safe to keep for a year; css/js revalidate.
+app.use(
+  express.static(__dirname + "/public", {
+    setHeaders(res, filePath) {
+      if (/\.html$/.test(filePath)) {
+        res.setHeader("Cache-Control", "no-store, must-revalidate");
+      } else if (/\.woff2?$/.test(filePath)) {
+        res.setHeader("Cache-Control", "public, max-age=31536000, immutable");
+      } else {
+        res.setHeader("Cache-Control", "no-cache");
+      }
+    },
+  })
+);
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
