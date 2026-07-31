@@ -222,13 +222,6 @@ header {
   max-width: 1000px;
 }
 
-.pricing-table {
-  display: flex;
-  justify-content: space-around;
-  gap: 1rem;
-  flex-wrap: wrap; /* Ensure cards wrap on smaller screens */
-}
-
 #loader {
   text-align: center;
   font-size: 1rem;
@@ -428,11 +421,6 @@ a:hover {
 
   .hero {
     padding: 2rem 1rem;
-  }
-
-  .plan {
-    max-width: 100%; /* Ensure pricing cards take full width */
-    padding: 1rem;
   }
 
   footer {
