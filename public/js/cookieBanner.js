@@ -1,42 +1,24 @@
+/**
+ * Cookie banner.
+ *
+ * Uses a class rather than inline display, because the banner is a flex
+ * container in the stylesheet and `style.display = "block"` would have
+ * flattened its layout.
+ */
 export function initCookieBanner() {
-  const cookieBanner = document.getElementById("cookie-banner");
-  const acceptBtn = document.getElementById("accept-cookies");
-  const refuseBtn = document.getElementById("reject-cookies");
+  const banner = document.getElementById("cookie-banner");
+  const accept = document.getElementById("accept-cookies");
+  const reject = document.getElementById("reject-cookies");
+  if (!banner) return;
 
-  // Show the cookie banner if cookies are not accepted or refused
-  if (!localStorage.getItem("cookiesAccepted")) {
-    cookieBanner.style.display = "block";
-  }
+  const choice = localStorage.getItem("cookiesAccepted");
+  if (choice === null) banner.classList.add("show");
 
-  // Handle "Accept" button click
-  if (acceptBtn) {
-    acceptBtn.addEventListener("click", () => {
-      localStorage.setItem("cookiesAccepted", "true");
-      cookieBanner.style.display = "none";
-      console.log("Cookies accepted.");
-    });
-  }
+  const decide = (value) => {
+    try { localStorage.setItem("cookiesAccepted", value); } catch (_) {}
+    banner.classList.remove("show");
+  };
 
-  // Handle "Refuse" button click
-  if (refuseBtn) {
-    refuseBtn.addEventListener("click", () => {
-      localStorage.setItem("cookiesAccepted", "false");
-      cookieBanner.style.display = "none";
-      console.log("Cookies refused.");
-    });
-  }
-
-  // Optional: Check the user's choice and act accordingly
-  const cookiesAccepted = localStorage.getItem("cookiesAccepted");
-  if (cookiesAccepted === "true") {
-    console.log("Cookies are enabled.");
-    cookieBanner.style.display = "none";
-    // Initialize analytics or other cookie-dependent features here
-
-  } else if (cookiesAccepted === "false") {
-    console.log("Cookies are disabled.");
-    cookieBanner.style.display = "none";
-    // Disable analytics or other cookie-dependent features here
-
-  }
+  if (accept) accept.addEventListener("click", () => decide("true"));
+  if (reject) reject.addEventListener("click", () => decide("false"));
 }

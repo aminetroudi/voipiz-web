@@ -4,89 +4,84 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mentions légales - Voipiz</title>
-    <meta
-      name="description"
-      content="Découvrez notre politique de cookies et comment nous utilisons les cookies pour améliorer votre expérience sur notre site."
-    />
+    <meta name="robots" content="index,follow" />
+    <meta name="theme-color" content="#05080d" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 32 32&#39;%3E%3Crect width=&#39;32&#39; height=&#39;32&#39; fill=&#39;%2305080d&#39;/%3E%3Ccircle cx=&#39;16&#39; cy=&#39;16&#39; r=&#39;5&#39; fill=&#39;%232ee8c8&#39;/%3E%3C/svg%3E" />
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <script defer src="js/libs/bootstrap.bundle.min.js"></script>
-    <script 
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
-      rel="stylesheet"></script>
-        <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RBWMK6T3N4"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-RBWMK6T3N4');
-    </script>
   </head>
   <body>
-    <header>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
-        <div class="container">
-          <a class="navbar-brand" href="/index.html#home">VOIPIZ</a>
-          <button 
-            class="navbar-toggler" 
-            type="button" 
-            data-bs-toggle="collapse" 
-            data-bs-target="#navbarNav" 
-            aria-controls="navbarNav" 
-            aria-expanded="false" 
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
+    <header class="nav is-stuck" id="nav">
+      <div class="nav-inner">
+        <a class="brand" href="index.html#home">
+          <span class="brand-dot" aria-hidden="true"></span>VOIPIZ
+        </a>
+        <nav aria-label="Principal">
+          <ul class="nav-links" id="nav-links">
+            <li><a class="nav-link" href="index.html#services">Services</a></li>
+            <li><a class="nav-link" href="index.html#advantages">Pourquoi nous</a></li>
+            <li><a class="nav-link" href="index.html#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="nav-actions">
+          <button class="nav-toggle" id="nav-toggle" type="button"
+                  aria-expanded="false" aria-controls="nav-links" aria-label="Menu">
+            <span></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="/index.html#services">Services</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/index.html#pricing">Tarifs</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/index.html#comparison">Offres</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/index.html#advantages">Pourquoi nous ?</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/index.html#france">VoIP en France</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/index.html#contact">Contact</a>
-              </li>
+        </div>
+      </div>
+    </header>
+
+    <main class="doc">
+      <div class="shell">
+        <h1>Informations légales</h1>
+        <p><strong>Nom de l'entreprise </strong>Voipiz</p>
+        <p><strong>Forme juridique </strong> SASU</p>
+        <p><strong>Siège social </strong>Strasbourg, France</p>
+        <!--
+        <p><strong>RCS :</strong> [Numéro d'immatriculation]</p>
+        <p><strong>Directeur de la publication :</strong>Gabriel TROUDI</p>
+        -->
+        <p><strong>Email </strong>contact@voipiz.fr</p>
+        <p><strong>Téléphone </strong> +33 6 22 92 61 36</p>
+        <p><strong>Hébergeur </strong>Render</p>
+        <h2>Données personnelles</h2>
+        <p>Conformément au RGPD, vous pouvez demander la suppression ou la rectification de vos données personnelles via l’adresse contact@voipiz.fr</p>
+        <h2>Cookies</h2>
+        <p>Ce site peut utiliser des cookies pour améliorer votre expérience de navigation. En continuant à naviguer, vous acceptez leur utilisation.</p>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="shell">
+        <div class="footer-grid">
+          <div>
+            <a class="brand" href="index.html#home"><span class="brand-dot" aria-hidden="true"></span>VOIPIZ</a>
+            <p class="footer-tag">Téléphonie d’entreprise augmentée par l’IA, opérée depuis l’Europe.</p>
+          </div>
+          <div>
+            <h4>Navigation</h4>
+            <ul>
+              <li><a href="index.html#services">Services</a></li>
+              <li><a href="index.html#advantages">Pourquoi nous</a></li>
+              <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Légal</h4>
+            <ul>
+              <li><a href="terms.html">Conditions d’utilisation</a></li>
+              <li><a href="cookie-policy.html">Politique de cookies</a></li>
+              <li><a href="tel:+33622926136">+33&nbsp;6&nbsp;22&nbsp;92&nbsp;61&nbsp;36</a></li>
             </ul>
           </div>
         </div>
-      </nav>
-    </header>
-
-    <section class="section container">
-      <h1 class="text-center mb-4">Informations légales</h1>
-      <p><strong>Nom de l'entreprise </strong>Voipiz</p>
-      <p><strong>Forme juridique </strong> SASU</p>
-      <p><strong>Siège social </strong>Strasbourg, France</p>
-      <!--
-      <p><strong>RCS :</strong> [Numéro d'immatriculation]</p>
-      <p><strong>Directeur de la publication :</strong>Gabriel TROUDI</p>
-      -->
-      <p><strong>Email </strong>contact@voipiz.fr</p>
-      <p><strong>Téléphone </strong> +33 6 22 92 61 36</p>
-      <p><strong>Hébergeur </strong>Render</p>
-  
-      <h2>Données personnelles</h2>
-      <p>Conformément au RGPD, vous pouvez demander la suppression ou la rectification de vos données personnelles via l’adresse contact@voipiz.fr</p>
-  
-      <h2>Cookies</h2>
-      <p>Ce site peut utiliser des cookies pour améliorer votre expérience de navigation. En continuant à naviguer, vous acceptez leur utilisation.</p>
-    </section>
-
-    <footer>
-      <div class="text-center">2025 VOIPIZ. Tous droits réservés.</div>
+        <div class="footer-bottom">
+          <span>© <span id="year">2026</span> Voipiz · Strasbourg, France</span>
+          <span>Hébergé en Europe · Conforme RGPD</span>
+        </div>
+      </div>
     </footer>
+
+    <script type="module" src="js/main.js"></script>
   </body>
 </html>

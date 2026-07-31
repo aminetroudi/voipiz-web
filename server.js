@@ -102,9 +102,17 @@ app.post("/contact", async (req, res) => {
   }
 });
 
-// Catch-all route to serve index.html for any unmatched routes
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "index.html"));
+// Anything unmatched is a 404. This used to serve index.html with a 200 for
+// every unknown path, so /does-not-exist.js returned the full homepage —
+// duplicate content on every bad URL, and it hid broken asset references
+// behind a success status. This is a static multi-page site, not an SPA;
+// there is no client-side router that needs the fallback.
+app.use((req, res) => {
+  res.status(404);
+  if (req.accepts("html")) {
+    return res.sendFile(path.join(__dirname, "public", "404.html"));
+  }
+  res.type("txt").send("Not found");
 });
 
 app.listen(PORT, '0.0.0.0', () => {
